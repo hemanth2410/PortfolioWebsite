@@ -48,8 +48,8 @@ body {
     }
 @font-face {
     font-family: 'Iceland';
-    src: url('/Fonts/Iceland-Regular.ttf');
-    src: local('☺'), url('/Fonts/Iceland-Regular.ttf') format('ttf'), url('/Fonts/Iceland-Regular.ttf') format('truetype');
+    /*src: url('/Fonts/Iceland-Regular.ttf');
+    src: local('☺'), url('/Fonts/Iceland-Regular.ttf') format('ttf'), url('/Fonts/Iceland-Regular.ttf') format('truetype');*/
 }
 p {
     font-family: 'Iceland';
