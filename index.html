@@ -35,14 +35,36 @@
                             <span class="ButtonText" >ENTER</span>
                         </button>
                         <div>
-                            <div class="HiddenText textAnim" id="EnableContent">Coming soon...</div>
+                            <span class="HiddenText textAnim" id="text"></span><span class="cursor">▄</span>
                         </div>
                         <script>
                             const button = document.getElementById('EnableBtn');
-                            const myDiv = document.getElementById('EnableContent');
+                            const textElement = document.getElementById('text'); // Renamed to match the function variable
+
+                            // Added missing variable definitions
+                            const phrase = "Coming soon...";
+                            let index = 0;
+
                             button.addEventListener('click', function(){
-                                myDiv.style.display = 'block';
-                            });
+                                textElement.style.display = 'inline'; // Or 'block', depending on your CSS design
+                                type();
+                            }, { once: true }); // Prevent multiple clicks from triggering overlapping type loops
+
+                            function type() {
+                                if (index < phrase.length) {
+                                    textElement.textContent += phrase.charAt(index);
+                                    index++;
+                                    setTimeout(type, 180);
+                                } 
+                                else {
+                                    // Pause for 4 seconds at the end, then clear and restart
+                                    setTimeout(() => {
+                                    textElement.textContent = "";
+                                    index = 0;
+                                    type();
+                                    }, 4000); 
+                            }
+                        }
                         </script>
                     </div>
                 </div>
