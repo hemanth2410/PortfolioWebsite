@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Galactic Geeks</title>
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="Matrix"></canvas>
+        <script src="./index.js"></script>
+    </div>
+
+        <div class="overlay-text">
+            <div class="containerFlex">
+                <div>
+                    <p class="GreetingMessage blink-smooth">HI!</p>
+                </div>
+                <div class="VerticalContainer">
+                    <div class="Heading2">SYSTEM PROFILE // HEMANTH</div>
+                    <div class="Code-text textAnim">
+                        I build things that move, render, react, simulate and occasionally break spectacularly.<br />
+
+                        My playground spans game development, rendering, XR, AI, simulation and low-level systems. From building custom graphics technology and GPU-driven systems to designing gameplay and virtual worlds, I like being close to the machinery underneath the experience.
+                        <br />
+                        I learn by building.
+                        <br />
+                        I build by breaking things.
+                        <br />
+                        And I keep going until I understand why they broke.
+                    </div>
+                    <div class="ButtonWrapper containerFlex">
+                        <button class="IntroButtonStyle" id="EnableBtn">
+                            <span class="ButtonText" >ENTER</span>
+                        </button>
+                        <div>
+                            <div class="HiddenText textAnim" id="EnableContent">Coming soon...</div>
+                        </div>
+                        <script>
+                            const button = document.getElementById('EnableBtn');
+                            const myDiv = document.getElementById('EnableContent');
+                            button.addEventListener('click', function(){
+                                myDiv.style.display = 'block';
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
+
+
+ 

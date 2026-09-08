@@ -1,0 +1,231 @@
+﻿html {
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.canvas-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#Matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none; /* Let clicks/hovers pass through empty layout spaces */
+}
+.containerHi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+    .containerHi div {
+        height: 400px;
+        width: 600px;
+    }
+@font-face {
+    font-family: 'Iceland';
+    src: url('/Fonts/Iceland-Regular.ttf');
+    src: local('☺'), url('/Fonts/Iceland-Regular.ttf') format('ttf'), url('/Fonts/Iceland-Regular.ttf') format('truetype');
+}
+p {
+    font-family: 'Iceland';
+}
+
+.GreetingMessage {
+    font-family: 'Iceland';
+    font-size: 300px;
+    color: #00FF00;
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center; /* right align */
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    user-select: none; /* Prevents unwanted blue highlight selection */
+}
+    .GreetingMessage:hover {
+        color: #ff3c3c;
+    }
+.ParagraphBody {
+    font-family: 'Iceland';
+    font-size: 14px;
+    color: #00FF00;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+}
+.Code-text {
+    font-family: Consolas;
+    font-size: 14px;
+    color: #00FF00;
+    display: block; /* Ensure it behaves as a normal text block */
+    width: auto;
+    height: auto;
+    margin: 0 0 15px 0; /* Add bottom margin to physically push the button down */
+    padding: 0;
+    pointer-events: none; /* Let pointer events pass straight through the text box */
+}
+.Heading2 {
+    font-family: 'Iceland';
+    font-size: 26px;
+    color: #00FF00;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.Heading2, .GreetingMessage {
+    user-select: none;
+    -webkit-user-select: none;
+}
+.containerFlex {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0 0 0 / 0.75);
+    border-radius: 10px;
+    padding: 20px;
+    pointer-events: auto;
+}
+    .containerFlex div {
+        margin: 5px;
+        padding: 5px;
+    }
+
+.VerticalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px; /* Use gap instead of margin/padding on inner divs */
+    max-width: 600px;
+    width: 100%;
+}
+    .VerticalContainer div {
+        margin: 5px;
+        padding: 5px;
+        min-height:auto;
+    }
+
+.IntroButtonStyle {
+    height: 40px;
+    background-color: #000000;
+    border: 2px solid #10540e;
+    max-width: 250px;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+    .IntroButtonStyle:hover {
+        border-color: #00FF00;
+        background-color: #00FF00;
+    }
+
+.ButtonText {
+    font-family: 'Iceland';
+    color: #00FF00;
+    font-size: 25px;
+    margin: 0;
+    pointer-events: none; /* Prevents text from blocking hover on parent button */
+}
+
+.IntroButtonStyle:hover .ButtonText {
+    color: #000000;
+}
+.blink-smooth {
+    animation: blink_smooth 1s infinite;
+}
+
+@keyframes blink_smooth {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.textAnim {
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes textflicker {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+.ButtonWrapper {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    margin-top: 15px;
+}
+
+.HiddenText {
+    font-family: Consolas;
+    font-size: 25px;
+    color: #00FF00;
+    display: none; /* Ensure it behaves as a normal text block */
+    width: auto;
+    height: auto;
+    margin: 0 0 15px 0; /* Add bottom margin to physically push the button down */
+    padding: 0;
+    pointer-events: none; /* Let pointer events pass straight through the text box */
+}
+
+/*div, button {
+    outline: 1px solid red !important;
+}*/
