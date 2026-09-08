@@ -50,6 +50,9 @@ body {
     font-family: 'Iceland';
     src: url('./SiteAssets/Fonts/Iceland-Regular.ttf');
     src: local('☺'), url('./SiteAssets/Fonts/Iceland-Regular.ttf') format('ttf'), url('./SiteAssets/Fonts/Iceland-Regular.ttf') format('truetype');
+    font-family: 'Consolas';
+    src: url('./SiteAssets/Fonts/Consolas-Regular.ttf');
+    src: local('☺'), url('./SiteAssets/Fonts/Consolas-Regular.ttf') format('ttf'), url('./SiteAssets/Fonts/Consolas-Regular.ttf') format('truetype');
 }
 p {
     font-family: 'Iceland';
@@ -87,7 +90,7 @@ p {
 
 }
 .Code-text {
-    font-family: Consolas;
+    font-family: 'Consolas';
     font-size: 14px;
     color: #00FF00;
     display: block; /* Ensure it behaves as a normal text block */
@@ -215,7 +218,7 @@ p {
 }
 
 .HiddenText {
-    font-family: Consolas;
+    font-family: 'Consolas';
     font-size: 25px;
     color: #00FF00;
     display: none; /* Ensure it behaves as a normal text block */
