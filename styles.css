@@ -50,6 +50,8 @@ body {
     font-family: 'Iceland';
     src: url('./SiteAssets/Fonts/Iceland-Regular.ttf');
     src: local('☺'), url('./SiteAssets/Fonts/Iceland-Regular.ttf') format('ttf'), url('./SiteAssets/Fonts/Iceland-Regular.ttf') format('truetype');
+}
+@font-face {
     font-family: 'Consolas';
     src: url('./SiteAssets/Fonts/Consolas-Regular.ttf');
     src: local('☺'), url('./SiteAssets/Fonts/Consolas-Regular.ttf') format('ttf'), url('./SiteAssets/Fonts/Consolas-Regular.ttf') format('truetype');
