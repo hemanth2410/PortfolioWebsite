@@ -64,6 +64,9 @@ p {
     font-family: 'Iceland';
 }
 
+
+
+
 .GreetingMessage {
     font-family: 'Iceland';
     font-size: 300px;
@@ -238,3 +241,33 @@ p {
 /*div, button {
     outline: 1px solid red !important;
 }*/
+
+@media (max-width: 768px) {
+    .containerFlex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 90vw;
+        padding: 15px;
+    }
+
+    .GreetingMessage {
+        font-size: 150px;
+        height: auto;
+    }
+    /* Align text and elements nicely for smaller screens */
+    .Heading2, .ParagraphBody {
+        justify-content: center;
+    }
+
+    .Code-text {
+        text-align: left; /* Keeps your matrix/terminal text readable */
+    }
+
+    /* Keep the button wrapper nicely centered when stacked */
+    .ButtonWrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
