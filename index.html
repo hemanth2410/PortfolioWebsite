@@ -12,67 +12,93 @@
         <script src="./index.js"></script>
     </div>
 
-        <div class="overlay-text">
-            <div class="containerFlex">
-                <div>
-                    <p class="GreetingMessage blink-smooth">HI!</p>
+    <div class="overlay-text">
+        <div class="containerFlex">
+            <div>
+                <p class="GreetingMessage blink-smooth">HI!</p>
+            </div>
+            <div class="VerticalContainer">
+                <div class="Heading2">SYSTEM PROFILE // HEMANTH</div>
+                <div class="Code-text textAnim">
+                    I build things that move, render, react, simulate and occasionally break spectacularly.<br />
+
+                    My playground spans game development, rendering, XR, AI, simulation and low-level systems. From building custom graphics technology and GPU-driven systems to designing gameplay and virtual worlds, I like being close to the machinery underneath the experience.
+                    <br />
+                    I learn by building.
+                    <br />
+                    I build by breaking things.
+                    <br />
+                    And I keep going until I understand why they broke.
                 </div>
-                <div class="VerticalContainer">
-                    <div class="Heading2">SYSTEM PROFILE // HEMANTH</div>
-                    <div class="Code-text textAnim">
-                        I build things that move, render, react, simulate and occasionally break spectacularly.<br />
-
-                        My playground spans game development, rendering, XR, AI, simulation and low-level systems. From building custom graphics technology and GPU-driven systems to designing gameplay and virtual worlds, I like being close to the machinery underneath the experience.
-                        <br />
-                        I learn by building.
-                        <br />
-                        I build by breaking things.
-                        <br />
-                        And I keep going until I understand why they broke.
-                    </div>
-                    <div class="ButtonWrapper containerFlex">
-                        <button class="IntroButtonStyle" id="EnableBtn">
-                            <span class="ButtonText" >ENTER</span>
-                        </button>
-                        <div>
-                            <span class="HiddenText textAnim" id="text"></span><span class="cursor">▄</span>
-                        </div>
-                        <script>
-                            const button = document.getElementById('EnableBtn');
-                            const textElement = document.getElementById('text'); // Renamed to match the function variable
-
-                            // Added missing variable definitions
-                            const phrase = "Coming soon...";
-                            let index = 0;
-
-                            button.addEventListener('click', function(){
-                                textElement.style.display = 'inline'; // Or 'block', depending on your CSS design
-                                type();
-                            }, { once: true }); // Prevent multiple clicks from triggering overlapping type loops
-
-                            function type() {
-                                if (index < phrase.length) {
-                                    textElement.textContent += phrase.charAt(index);
-                                    index++;
-                                    setTimeout(type, 180);
-                                } 
-                                else {
-                                    // Pause for 4 seconds at the end, then clear and restart
-                                    setTimeout(() => {
-                                    textElement.textContent = "";
-                                    index = 0;
-                                    type();
-                                    }, 4000); 
-                            }
-                        }
-                        </script>
+                <div class="ButtonWrapper containerFlex">
+                    <button class="IntroButtonStyle" id="EnableBtn">
+                        <span class="ButtonText">ENTER</span>
+                    </button>
+                    <div>
+                        <span class="HiddenText textAnim" id="text"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
                     </div>
                 </div>
+                <div class="ButtonWrapper containerFlex">
+                    <button class="IntroButtonStyle" id="ResumeBtn">
+                        <span class="ButtonText">DOWNLOAD RESUME</span>
+                    </button>
+                    <div>
+                        <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                    </div>
+                </div>
+                <script>
+                    // --- ENTER BUTTON LOGIC ---
+                    const enableBtn = document.getElementById('EnableBtn');
+                    const enterTextElement = document.getElementById('text');
+                    const enterPhrase = "Coming soon...";
+                    let enterIndex = 0;
+
+                    enableBtn.addEventListener('click', function() {
+                    enterTextElement.style.display = 'inline';
+                    typeEnter();
+                    }, { once: true });
+
+                    function typeEnter() {
+                    if (enterIndex < enterPhrase.length) {
+                    enterTextElement.textContent += enterPhrase.charAt(enterIndex);
+                    enterIndex++;
+                    setTimeout(typeEnter, 180);
+                    } else {
+                    setTimeout(() => {
+                    enterTextElement.textContent = "";
+                    enterIndex = 0;
+                    typeEnter();
+                    }, 4000);
+                    }
+                    }
+
+                    // --- RESUME BUTTON LOGIC ---
+                    const resumeBtn = document.getElementById('ResumeBtn');
+                    const resumeTextElement = document.getElementById('downloadText');
+                    const resumePhrase = "Downloading...";
+                    let resumeIndex = 0;
+                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
+
+                    resumeBtn.addEventListener('click', function() {
+                    resumeTextElement.style.display = 'inline';
+                    typeResume();
+                    }, { once: true });
+
+                    function typeResume() {
+                    if (resumeIndex < resumePhrase.length) {
+                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
+                    resumeIndex++;
+                    setTimeout(typeResume, 180);
+                    } else {
+                    window.open(pdfUrl, '_blank');
+                    }
+                    }
+                </script>
             </div>
         </div>
+    </div>
 
 </body>
 </html>
 
 
- 
