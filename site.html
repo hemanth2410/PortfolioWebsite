@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Galactic Geeks | Hemanth</title>
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="./SiteAssets/40FF00.png">
+    <link rel="apple-touch-icon" href="./SiteAssets/40FF00.png">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Galactic Geeks | Hemanth">
+    <meta name="description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+
+    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
+    <meta property="og:title" content="Galactic Geeks | Hemanth">
+    <meta property="og:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <!-- MUST be an absolute URL for WhatsApp to read it properly -->
+    <meta property="og:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <!-- Twitter Preview Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
+    <meta name="twitter:title" content="Galactic Geeks | Hemanth">
+    <meta name="twitter:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <meta name="twitter:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item grid-item-left">
+            <p style="font-size:22px; color:#00FF00;" class="blink-rapid">█</p>
+            <p style="font-size:24px; color:#00FF00;">GALACTIC TERMINAL</p>
+        </div>
+        <div class="grid-item grid-item-right">
+            <button class="IntroButtonStyle nav-btn">
+                <span class="ButtonText">UPDATES</span>
+            </button>
+            <button class="IntroButtonStyle nav-btn">
+                <span class="ButtonText">PROJECTS</span>
+            </button>
+            <button class="IntroButtonStyle nav-btn">
+                <span class="ButtonText">ABOUT ME</span>
+            </button>
+            <script>
+                const buttons = document.querySelectorAll('.nav-btn');
+
+                buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                // 1. Reset all buttons and their child span texts
+                buttons.forEach(btn => {
+                btn.classList.remove('IntroButtonStyle-selected');
+                btn.classList.add('IntroButtonStyle');
+
+                const textSpan = btn.querySelector('.ButtonText');
+                if (textSpan) {
+                textSpan.classList.remove('ButtonText-Selected');
+                }
+                });
+
+                // 2. Apply selected classes to the clicked button and its span
+                this.classList.remove('IntroButtonStyle');
+                this.classList.add('IntroButtonStyle-selected');
+
+                const selectedText = this.querySelector('.ButtonText');
+                if (selectedText) {
+                selectedText.classList.add('ButtonText-Selected');
+                }
+                });
+                });
+            </script>
+        </div>
+        <div class="grid-item grid-item-left">
+            <span style="width:15px"></span>
+            <div class="Code-text textAnim">
+                Life as a game dev
+            </div>
+        </div>
+        <div class="grid-item">
+
+        </div>
+    </div>
+    <div style="width: auto; height: 3px; background-color:#10540e; margin:0px; padding:0px"></div>
+    <div style="padding:15px 50px 15px 40px;" id="AboutMe">
+        <p class="ParagraphBody" style="font-size:16px;">$ Mount\About> cat speciman.log</p>
+        <div class="speciman">
+            <div class="SpecimanStyle">
+                <div style="background-image: url('./PortfolioAssets/Me/image.png');" class="SpecimanStyle-Image"></div>
+                <p class="paragraphText" style="font-size:24px; padding:5px 0px 0px 0px;">SAI HEMANTH SATTENAPALLI</p>
+                <p class="paragraphText" style="font-size: 20px; padding: 5px 0px 0px 0px;">GAME DEVELOPER</p>
+            </div>
+            <div class="SpecimanStyle" style="align-items: flex-start;">
+                <p class="ParagraphBody" style="font-size: 32px; text-align: left;">ABOUT // HEMANTH</p>
+                <p class="ParagraphBody" style="font-size:16px; font-size:16px; text-align: left; margin-top: 15px; line-height: 1.6;">
+                    Hemanth is a game developer and systems engineer driven by a simple objective: understand the machinery behind interactive experiences. His work spans gameplay, rendering, XR, simulation, AI, networking, GPU programming and performance engineering, with an increasing focus on ECS, large-scale simulation and robotics. Rather than simply using existing systems, he builds, breaks and rebuilds them to understand how they work—from game mechanics and VR interactions to renderers, GPU-driven systems and inverse kinematics. The objective is not to master a particular tool, but to continually push deeper into the technology and build better systems along the way.
+                </p>
+                <div class="ButtonWrapper containerFlex" style="padding:0px">
+                    <button class="IntroButtonStyle" id="ResumeBtn">
+                        <span class="ButtonText">DOWNLOAD RESUME</span>
+                    </button>
+                    <div>
+                        <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                    </div>
+                </div>
+                <script>
+                    // --- RESUME BUTTON LOGIC ---
+                    const resumeBtn = document.getElementById('ResumeBtn');
+                    const resumeTextElement = document.getElementById('downloadText');
+                    const resumePhrase = "Downloading...";
+                    let resumeIndex = 0;
+                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
+
+                    resumeBtn.addEventListener('click', function() {
+                    resumeTextElement.style.display = 'inline';
+                    typeResume();
+                    }, { once: true });
+
+                    function typeResume() {
+                    if (resumeIndex < resumePhrase.length) {
+                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
+                    resumeIndex++;
+                    setTimeout(typeResume, 180);
+                    } else {
+                    window.open(pdfUrl, '_blank');
+                    }
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="padding:15px 50px 15px 40px;">
+            <p style="font-size: 24px; color: #e84a4a; align-content: center; justify-content: center; text-align: center">Gaming hardwired</p>
+        </div>
+    </div>
+    <div style="padding:15px 50px 15px 40px;" id="Footer">
+        <p class="ParagraphBody" style="font-size:16px;">$ Mount\Core> Kernel --Status</p>
+    </div>
+    <div style="width: auto; height: 3px; background-color: #10540e; margin-left: 15px; margin-right: 15px; padding: 0px"></div>
+    <div style="padding:15px 50px 15px 40px;">
+        <p style="font-size:24px; color:#00FF00; align-content:center; justify-content:center; text-align:left">STATUS REPORT</p>
+    </div>
+    <div style="width: auto; height: 3px; background-color:#10540e; margin-left:15px; margin-right:15px; padding:0px"></div>
+    <div style="padding:15px 50px 15px 40px;">
+        <p style="font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Designers:</p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Abusing Weed ✓</p>
+        <p><br /></p>
+        <p style="font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Developers:</p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Abusing energy drinks and cold pizzas ✓</p>
+        <p><br /></p>
+        <p style="font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Artists:</p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Waiting for substance painter export ✓</p>
+    </div>
+    <div style="width: auto; height: 3px; background-color: #10540e; margin-left: 15px; margin-right: 15px; padding: 0px"></div>
+    <div style="padding:15px 50px 15px 40px;">
+        <p style="font-size:24px; color:#00FF00; align-content:center; justify-content:center; text-align:left">EXTERNAL LINKS</p>
+    </div>
+    <div style="width: auto; height: 3px; background-color:#10540e; margin-left:15px; margin-right:15px; padding:0px"></div>
+    <div style="padding:15px 50px 15px 40px;">
+        <p style="font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Steam ...404 coming soon</p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://hemanth2410.itch.io/">itch.io ✓</a>></p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.instagram.com/giga_chad_game_dev/">Instagram ✓</a>></p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.youtube.com/@GalacticGeeks-dn7vz">Youtube ✓</a>></p>
+        <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://discord.gg/uCqr29rM2P">Discord ✓</a>></p>
+      
+    </div>
+</body>
+</html>

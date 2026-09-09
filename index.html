@@ -62,19 +62,11 @@
                         <span class="HiddenText textAnim" id="text"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
                     </div>
                 </div>
-                <div class="ButtonWrapper containerFlex">
-                    <button class="IntroButtonStyle" id="ResumeBtn">
-                        <span class="ButtonText">DOWNLOAD RESUME</span>
-                    </button>
-                    <div>
-                        <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
-                    </div>
-                </div>
                 <script>
                     // --- ENTER BUTTON LOGIC ---
                     const enableBtn = document.getElementById('EnableBtn');
                     const enterTextElement = document.getElementById('text');
-                    const enterPhrase = "Coming soon...";
+                    const enterPhrase = "Booting...";
                     let enterIndex = 0;
 
                     enableBtn.addEventListener('click', function() {
@@ -89,32 +81,8 @@
                     setTimeout(typeEnter, 180);
                     } else {
                     setTimeout(() => {
-                    enterTextElement.textContent = "";
-                    enterIndex = 0;
-                    typeEnter();
-                    }, 4000);
-                    }
-                    }
-
-                    // --- RESUME BUTTON LOGIC ---
-                    const resumeBtn = document.getElementById('ResumeBtn');
-                    const resumeTextElement = document.getElementById('downloadText');
-                    const resumePhrase = "Downloading...";
-                    let resumeIndex = 0;
-                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
-
-                    resumeBtn.addEventListener('click', function() {
-                    resumeTextElement.style.display = 'inline';
-                    typeResume();
-                    }, { once: true });
-
-                    function typeResume() {
-                    if (resumeIndex < resumePhrase.length) {
-                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
-                    resumeIndex++;
-                    setTimeout(typeResume, 180);
-                    } else {
-                    window.open(pdfUrl, '_blank');
+                        window.location.href = 'site.html';
+                    });
                     }
                     }
                 </script>

@@ -1,7 +1,7 @@
 ﻿html {
     background: black;
     height: 100%;
-    overflow: hidden;
+    overflow-y: auto;
 }
 body {
     margin: 0;
@@ -98,6 +98,21 @@ p {
     padding: 0;
 
 }
+
+.paragraphText {
+    font-family: 'Iceland';
+    font-size: 14px;
+    color: #00FF00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0;
+    text-align: center;
+    width: 100%; /* Ensures paragraph spans full container width */
+    margin: 0; /* Resets default browser paragraph gaps */
+    box-sizing: border-box;
+}
 .Code-text {
     font-family: 'Consolas';
     font-size: 14px;
@@ -172,7 +187,25 @@ p {
         border-color: #00FF00;
         background-color: #00FF00;
     }
-
+    /* Hover effect ONLY applies when button is NOT selected */
+    .IntroButtonStyle:not(.IntroButtonStyle-selected):hover {
+        border-color: #00FF00;
+        background-color: #00FF00;
+    }
+.IntroButtonStyle-selected {
+    height: 40px;
+    background-color: #10540e;
+    border: 2px solid #10540e;
+    max-width: 250px;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
 .ButtonText {
     font-family: 'Iceland';
     color: #00FF00;
@@ -183,6 +216,13 @@ p {
 
 .IntroButtonStyle:hover .ButtonText {
     color: #000000;
+}
+.IntroButtonStyle:not(.IntroButtonStyle-selected):hover .ButtonText {
+    color: #000000;
+}
+
+.ButtonText-Selected{
+    color:#00FF00;
 }
 .blink-smooth {
     animation: blink_smooth 1s infinite;
@@ -202,30 +242,22 @@ p {
     }
 }
 
-.blink-rapid{
-    animation: blinky 1s infinite;
+.blink-rapid {
+    animation: blinky 1s infinite steps(1, start);
 }
 
-@keyframes blinky{
-    0%{
-        opacity:1;
-    }
-    20%{
-        opacity:0;
-    }
-    40%{
-        opacity:1;
-    }
-    60%{
-        opacity:0;
-    }
-    80%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
+@keyframes blinky {
+    0%, 35% {
+        opacity: 1;
     }
 
+    40%, 75% {
+        opacity: 0;
+    }
+
+    80%, 100% {
+        opacity: 1;
+    }
 }
 .textAnim {
     animation-duration: 0.01s;
@@ -294,5 +326,151 @@ p {
         flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+}
+
+
+
+/* Site page styles */
+.grid-container {
+    display: grid;
+    /* Creates 2 equal-width columns */
+    grid-template-columns: 1fr 1.5fr;
+    /* Creates 2 equal-height rows */
+    grid-template-rows: 1fr 1fr;
+    /* Adds space between grid cells */
+    gap: 2px;
+    /* Optional sizing & border for demonstration */
+    width: 100%;
+    height: 150px;
+    padding:2px;
+    background-color: #000000;
+    box-sizing: border-box;
+}
+
+/* 2. Style the Grid Items (Optional: for centering the buttons) */
+/*.grid-item {
+    background-color: #ffffff;*/
+    /*border: 1px solid #ddd;*/
+    /* Center the button inside each grid cell using Flexbox */
+    /*display: flex;
+    justify-content: center;*/ /* Horizontally center */
+    /*align-items: center;*/ /* Vertically center */
+    /*width:auto;
+}*/
+
+    /* 3. Style the Buttons (Optional) */
+    /*.grid-item button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width:auto;
+    }
+
+        .grid-item button:hover {
+            background-color: #0056b3;
+        }*/
+.grid-item{
+    background-color:#000000;
+}
+.grid-item-left{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:auto;
+    gap:15px;
+    padding : 0px 10px 0px 10px;
+}
+.grid-item-right{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    width:auto;
+    gap:15px;
+    padding:0px 10px 0px 10px;
+}
+
+.SpecimanStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 512px;
+    width: 100%; /* Ensures it shrinks cleanly on mobile screens */
+    margin: 0; /* Centers horizontally within parent */
+    padding: 15px;
+    box-sizing: border-box; /* Prevents padding from breaking max-width */
+}
+    .SpecimanStyle p {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+
+.SpecimanStyle-Image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Clean gap control between image and text below it */
+}
+.speciman {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Pulls both boxes into the center */
+    align-items: stretch; /* Makes both boxes match each other's height */
+    gap: 30px; /* Adjust this exact value for your desired spacing */
+    width: 100%; /* Fills parent container */
+}
+@media (max-width: 768px){
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 100%;
+        height: auto;
+        padding: 2px;
+        background-color: #000000;
+        box-sizing: border-box;
+    }
+    /* Assign visual position regardless of HTML order */
+    .grid-item-0 {
+        order: 1;
+    }
+    /* Displays 1st */
+    .grid-item-2 {
+        order: 2;
+    }
+    /* Displays 2nd */
+    .grid-item-1 {
+        order: 3;
+    }
+    /* Displays 3rd */
+    .grid-item-right {
+        display: flex;
+        flex-direction:column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: auto;
+        gap: 15px;
+        margin-left:30px;
+        margin-bottom:25px;
+        padding: 0px 10px 0px 10px;
+    }
+    .speciman{
+        flex-direction:column;
+    }
+    .ParagraphBody{
+        margin:0px;
+        padding:0px;
+        align-content:flex-start;
+        justify-content:flex-start;
     }
 }
