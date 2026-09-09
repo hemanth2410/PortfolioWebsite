@@ -474,3 +474,12 @@ p {
         justify-content:flex-start;
     }
 }
+
+.content-section {
+    display: none !important;
+}
+
+    /* Only display the active section */
+    .content-section.active {
+        display: block !important;
+    }

@@ -37,42 +37,15 @@
             <p style="font-size:24px; color:#00FF00;">GALACTIC TERMINAL</p>
         </div>
         <div class="grid-item grid-item-right">
-            <button class="IntroButtonStyle nav-btn">
+            <button class="IntroButtonStyle-selected nav-btn" data-target="Updates">
                 <span class="ButtonText">UPDATES</span>
             </button>
-            <button class="IntroButtonStyle nav-btn">
+            <button class="IntroButtonStyle nav-btn" data-target="Projects">
                 <span class="ButtonText">PROJECTS</span>
             </button>
-            <button class="IntroButtonStyle nav-btn">
+            <button class="IntroButtonStyle nav-btn" data-target="AboutMe">
                 <span class="ButtonText">ABOUT ME</span>
             </button>
-            <script>
-                const buttons = document.querySelectorAll('.nav-btn');
-
-                buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                // 1. Reset all buttons and their child span texts
-                buttons.forEach(btn => {
-                btn.classList.remove('IntroButtonStyle-selected');
-                btn.classList.add('IntroButtonStyle');
-
-                const textSpan = btn.querySelector('.ButtonText');
-                if (textSpan) {
-                textSpan.classList.remove('ButtonText-Selected');
-                }
-                });
-
-                // 2. Apply selected classes to the clicked button and its span
-                this.classList.remove('IntroButtonStyle');
-                this.classList.add('IntroButtonStyle-selected');
-
-                const selectedText = this.querySelector('.ButtonText');
-                if (selectedText) {
-                selectedText.classList.add('ButtonText-Selected');
-                }
-                });
-                });
-            </script>
         </div>
         <div class="grid-item grid-item-left">
             <span style="width:15px"></span>
@@ -85,7 +58,18 @@
         </div>
     </div>
     <div style="width: auto; height: 3px; background-color:#10540e; margin:0px; padding:0px"></div>
-    <div style="padding:15px 50px 15px 40px;" id="AboutMe">
+    <!-- Content Sections -->
+    <!-- Set Updates as active by default -->
+    <div id="Updates" class="content-section active" style="padding:15px 50px 15px 40px;">
+        <p class="ParagraphBody" style="font-size:16px;">$ Mount\Updates> cat latest.log</p>
+        <!-- Add your updates content here -->
+    </div>
+
+    <div id="Projects" class="content-section" style="padding:15px 50px 15px 40px;">
+        <p class="ParagraphBody" style="font-size:16px;">$ Mount\Projects> ls -la</p>
+        <!-- Projects content -->
+    </div>
+    <div style="padding:15px 50px 15px 40px;" id="AboutMe" class="content-section">
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\About> cat speciman.log</p>
         <div class="speciman">
             <div class="SpecimanStyle">
@@ -164,7 +148,44 @@
         <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.instagram.com/giga_chad_game_dev/">Instagram ✓</a>></p>
         <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.youtube.com/@GalacticGeeks-dn7vz">Youtube ✓</a>></p>
         <p style="font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://discord.gg/uCqr29rM2P">Discord ✓</a>></p>
-      
+
     </div>
+    <script>
+        const buttons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.content-section');
+
+        function switchTab(targetId) {
+        buttons.forEach(btn => {
+        const textSpan = btn.querySelector('.ButtonText');
+        if (btn.getAttribute('data-target') === targetId) {
+        btn.classList.remove('IntroButtonStyle');
+        btn.classList.add('IntroButtonStyle-selected');
+        if (textSpan) textSpan.classList.add('ButtonText-Selected');
+        } else {
+        btn.classList.remove('IntroButtonStyle-selected');
+        btn.classList.add('IntroButtonStyle');
+        if (textSpan) textSpan.classList.remove('ButtonText-Selected');
+        }
+        });
+
+        sections.forEach(sec => {
+        if (sec.id === targetId) {
+        sec.classList.add('active');
+        } else {
+        sec.classList.remove('active');
+        }
+        });
+        }
+
+        buttons.forEach(button => {
+        button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        switchTab(targetId);
+        });
+        });
+
+        // Default to Updates on load
+        switchTab('Updates');
+    </script>
 </body>
 </html>
