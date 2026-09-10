@@ -62,20 +62,179 @@
     <!-- Set Updates as active by default -->
     <div id="Updates" class="content-section active" style="padding:15px 50px 15px 40px;">
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\Updates> cat latest.log</p>
-        <p class="ParagraphBody" style="font-size: 22px; color: #148526; margin-left:40px; margin-top:25px">
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
             Date: 2nd September 2026
         </p>
-        <p class="ParagraphBody" style="font-size: 22px; color: #148526; margin-left:40px; margin-top:15px">
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
             Directx 11 render engine
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            A custom real-time rendering engine developed from first principles to understand the architecture and mathematics behind modern game rendering pipelines rather than relying entirely on an existing engine's abstractions.
+            The project began with rendering a basic triangle and progressively evolved into a complete real-time renderer supporting dynamic scene manipulation, asset importing, physically based rendering, render queues, a render graph, dynamic lighting, shadow mapping, GPU filtering, and skybox rendering.
         </p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
         </div>
+        <p class="ParagraphBody UpdateText">
+            After spending way too much time questioning my life choices, the renderer is finally starting to look like an actual rendering engine. 😅<br />
+
+            This is my progress on the DirectX 11 renderer I’m building from scratch as part of my own game engine.<br /><br />
+
+            So far, I’ve implemented:<br />
+
+            • Dynamic render queue and frame composition<br />
+            • Render graph architecture<br />
+            • PBR material/shader handling<br />
+            • Stencil-based mesh selection<br />
+            • Screen-space outlines<br />
+            • Gaussian blur<br />
+            • Full-screen shader passes<br />
+            • Dynamic shader/material parameter handling<br />
+            • Basic lighting and scene rendering<br /><br />
+
+            The goal isn't to recreate an existing engine feature-for-feature. I’m building this to understand what actually happens underneath the abstractions I normally work with in Unity and Unreal Engine.
+
+            The next major step is soft shadow rendering, after which I'll start focusing on improving the renderer's architecture, performance, and visual quality.
+
+            There will probably be a few more “why is everything white?” moments along the way. 😂<br /><br />
+
+            Built with:<br />
+            C++<br />
+            DirectX 11<br />
+            HLSL<br />
+            ImGui<br />
+        </p>
         <!-- Add your updates content here -->
     </div>
 
     <div id="Projects" class="content-section" style="padding:15px 50px 15px 40px;">
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\Projects> ls -la</p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Date: 2nd September 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Directx 11 render engine
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            A custom real-time rendering engine developed from first principles to understand the architecture and mathematics behind modern game rendering pipelines rather than relying entirely on an existing engine's abstractions.
+            The project began with rendering a basic triangle and progressively evolved into a complete real-time renderer supporting dynamic scene manipulation, asset importing, physically based rendering, render queues, a render graph, dynamic lighting, shadow mapping, GPU filtering, and skybox rendering.
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Development flow
+        </p>
+        <p class="UpdateFlow">
+            Triangle Rasterization
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Dynamic Cube & Scene Manipulation
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Texture Mapping
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Assimp Asset Importing
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Custom Transform System
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            First-Person Scene Controller
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Lighting & Lambertian Shading
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            GLTF Analysis & PBR Metallic-Roughness
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Alpha Blending
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Render Queue Architecture
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Render Graph
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Shadow Mapping
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            PCF & Slope-Scaled Bias
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Point-Light Cubemap Shadows
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Skybox & Final Renderer
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Built the rendering pipeline independently instead of depending on an existing game-engine rendering abstraction, requiring direct management of rendering passes, GPU resources, shaders, transforms, and scene state.<br />
+            •Replaced a sequential collection of rendering operations with a Render Graph responsible for coordinating frame clearing, shadow rendering, lighting, object highlighting, and composition.<br />
+            •Implemented a reusable Transform system supporting position, Euler/quaternion rotation, local/world-space transformations, and inverse transformations.<br />
+            •Implemented PBR metallic-roughness shading based on GLTF material data to reproduce physically based material behaviour.<br />
+            •Implemented shadow mapping for multiple light types, including cubemap-based point-light shadows.<br />
+            •Added hardware Percentage Closer Filtering (PCF) and slope-scaled depth bias to improve shadow quality while reducing shadow acne and Peter Panning.<br />
+            •Built debugging and visualization tools for cameras, projection frustums, scene objects, lighting, and runtime performance.<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Learning
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •The primary goal of the project was not simply to reproduce rendering features, but to understand the abstractions normally hidden by modern game engines.<br />
+            •Working from a triangle upward provided a practical understanding of how scene data eventually becomes pixels on the screen—from transforms and camera projections to GPU buffers, rasterization, lighting, shadow maps, filtering, and final composition.<br />
+            •The project also reinforced an important engineering principle: the more of the underlying system you understand, the less dependent you become on the abstraction built on top of it.<br />
+            •This experience significantly strengthened my understanding of real-time graphics, GPU programming, rendering architecture, shader development, and the engineering trade-offs involved in building a rendering pipeline.<br />
+        </p>
         <!-- Projects content -->
     </div>
     <div style="padding:15px 50px 15px 40px;" id="AboutMe" class="content-section">
