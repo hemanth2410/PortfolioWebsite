@@ -109,7 +109,7 @@
 
     <div id="Projects" class="content-section" style="padding:15px 50px 15px 40px;">
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\Projects> ls -la</p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
             Date: 2nd September 2026
         </p>
         <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
@@ -235,8 +235,156 @@
             •The project also reinforced an important engineering principle: the more of the underlying system you understand, the less dependent you become on the abstraction built on top of it.<br />
             •This experience significantly strengthened my understanding of real-time graphics, GPU programming, rendering architecture, shader development, and the engineering trade-offs involved in building a rendering pipeline.<br />
         </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            <a href="https://github.com/hemanth2410/TheRenderer">Check out the git repo</a>
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: 2nd August 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Leonids - High performance data driven ballistics system UnrealEngine
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Traditional projectile implementations in Unreal Engine commonly represent each projectile as an individual Actor or object with its own transform, collision state, movement logic, and gameplay behavior.<br />
+            While pooling can reduce allocation and spawning overhead, large numbers of active projectiles can still create substantial CPU work because each projectile requires simulation and collision processing every frame.<br />
+            For projectile-heavy combat, particularly weapons capable of producing large numbers of simultaneous rounds, the objective was to separate projectile simulation from the Unreal Actor lifecycle while retaining reliable collision, gameplay events, audiovisual feedback, and integration with Blueprint-driven weapon<br />
+        </p>
+        <div class="SpecimanStyle-Image" style="background-image: url('./SiteAssets/Missing.png'); margin-left:40px; margin-top:15px"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #FF0000">
+            COMING SOON
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Instead of representing every projectile as an Unreal Actor, the system treats projectiles as data managed centrally by a UWorldSubsystem.<br />
+            The subsystem maintains projectile state using compact parallel arrays containing position, velocity, damage, lifetime, and rendering indices.<br />
+            Projectile simulation is performed centrally through the subsystem's tick function, allowing weapons and other gameplay systems to submit projectile spawn requests through a Blueprint-callable interface rather than owning individual projectile simulation objects.<br /><br />
+
+            Each simulation frame is divided into several stages:<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            1. Projectile Simulation
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            For every active projectile:<br /><br />
+            •Advance its position using its current velocity.<br />
+            •Apply gravitational acceleration.<br />
+            •Track projectile lifetime.<br />
+            •Skip inactive projectiles.<br /><br />
+            The system uses explicit ballistic integration for the frame, including the gravity term:<br />
+            displacement = velocity × Δt + ½ × gravity × Δt²<br /><br />
+
+            This means collision prediction accounts for the projectile's curved ballistic trajectory, rather than simply checking the projectile after it has already moved.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            2. Predictive Collision Detection
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            Instead of moving the projectile first and then performing a collision test, the system performs a swept collision query from the current position toward its predicted position.<br />
+            This provides continuous collision detection for fast-moving projectiles and reduces the possibility of tunnelling through geometry.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            3. Parallel Projectile Processing
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            Active projectiles are processed using Unreal's parallel execution facilities.<br />
+            Each worker operates on projectile data while recording collision, retirement, and fly-by information into its own task context. Gameplay-affecting operations are deferred until the parallel simulation has completed.<br />
+            This separates:<br />
+        </p>
+        <p class="UpdateFlow">
+            Parallel simulation
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Result collection
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Game-thread dispatch
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            and avoids directly performing unsafe shared gameplay operations from worker threads.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            4. Result Dispatch
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            Projectile hits are collected and processed after the parallel simulation stage.<br />
+            The resulting events can then trigger gameplay consequences such as:<br /><br />
+            •damage,<br />
+            •projectile retirement,<br />
+            •impact effects,<br />
+            •impact sounds,<br />
+            •decals,<br />
+            •and other gameplay responses.<br /><br />
+            This keeps the simulation layer separated from the systems that consume projectile events.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            5. Niagara Visualization
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            Projectile visualization is separated from projectile simulation.<br />
+            Rather than spawning a Niagara system for every bullet, the subsystem maintains pooled Niagara indices and writes projectile position and velocity information through a Niagara Data Channel.<br />
+            When a projectile is retired, its Niagara slot can be returned to the free-index pool for reuse.<br />
+            This allows:<br />
+        </p>
+        <p class="UpdateFlow">
+            CPU projectile simulation
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            Niagara Data Channel
+        </p>
+        <p class="UpdateFlow">
+            ↓
+        </p>
+        <p class="UpdateFlow">
+            GPU projectile visualization
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            without requiring an individual Unreal Actor or Niagara component per projectile.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            6. Fly-by Detection
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            The system also supports projectile fly-by events.<br />
+            During simulation, nearby components carrying the BulletFlyby tag can be detected and their location and projectile direction recorded. These results are dispatched after the parallel simulation, allowing audio and other feedback systems to react without coupling them directly to the simulation workers.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Centralized projectile simulation using Unreal UWorldSubsystem<br />
+            •Data-oriented projectile state using compact parallel arrays<br />
+            •Parallelized projectile simulation<br />
+            •Predictive swept collision using ballistic displacement<br />
+            •Gravity-aware projectile trajectories<br />
+            •Deferred game-thread processing for gameplay side effects<br />
+            •Niagara Data Channel integration<br />
+            •Pooled Niagara visualization indices<br />
+            •Event-driven projectile feedback<br />
+            •Fly-by detection and directional projectile information<br />
+            •Actor-independent projectile simulation<br />
+            •Stress-tested at ~50,000 projectile spawns/sec<br />
+            •I had limited this project with an Array Of Structures implementation as there is very little difference in unreal engine as of compared to unity’s side of implementation.<br /><br />
+        </p>
+        <div class="DottedLine"></div>
         <!-- Projects content -->
     </div>
+
     <div style="padding:15px 50px 15px 40px;" id="AboutMe" class="content-section">
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\About> cat speciman.log</p>
         <div class="speciman">
