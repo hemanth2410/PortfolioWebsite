@@ -413,12 +413,11 @@ p {
 
 
 .SpecimanStyle-Image {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
-    border-radius: 10px;
     margin-bottom: 10px; /* Clean gap control between image and text below it */
 }
 .speciman {

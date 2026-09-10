@@ -104,6 +104,99 @@
             HLSL<br />
             ImGui<br />
         </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Date: 7th February 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Improving Combat Readability & Core Systems | GG dev Vlog 3
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Dev Vlog #3 – Improving Combat Readability & Core Systems
+            In this dev vlog, I’m focusing on combat readability and feedback — making sure the player always understands what is happening, what is being targeted, and what is about to happen.
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText">
+            Here’s what’s new:<br />
+            🔹 Lock-On Turret Rework<br />
+            The lock-on turret now has a clear anticipation window.
+            Instead of firing instantly, it highlights its target for a few seconds before shooting, giving the player time to react and reposition.<br />
+            🔹 Area-of-Effect Turret (Post Box Tower)<br />
+            This turret targets the first enemy that enters its area.
+            Once that enemy dies or leaves the zone, it automatically switches to the next valid target.
+            The current target is visually highlighted to keep targeting behavior readable.<br />
+            🔹 Suicide Capacitor<br />
+            A new enemy type that self-destructs after a short delay.
+            Its pulsing animation speeds up as it gets closer to exploding, clearly communicating danger and timing to the player.<br />
+            🔹 Global Particle System Manager<br />
+            All particle effects are now handled through a single global pool.
+            When an object dies, it simply requests the appropriate effect at its position — keeping effects consistent and performance-friendly.<br />
+            🔹 Threat Readability System<br /><br />
+            Whenever an enemy is being targeted:<br />
+            •A reticle is placed on the enemy<br />
+            •A line renderer connects the turret and its target<br />
+            •This system is fully pooled and event-driven, ensuring clear visual feedback without unnecessary overhead.<br />
+            The goal of these changes is simple:<br />
+            Better clarity, better anticipation, and better player decision-making.
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Date: 28th January 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            How We Built a Scalable Tower Defense System | GG Dev Vlog 2 | Galactic Geeks
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/r8Ov_UH2Y88?si=isKly3P2o6PzPnvR" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText">
+            •Oh one more update for our projectile system (we have made a coded color in a float, so the buffer type can remain vector4, GPUs love packed buffer)<br />
+            •player can build multiple towers in the level to attack enemies.<br />
+            •Enemies, Sounds, Death particle effects are all object pooled for better performance<br />
+            •Almost all of our systems are completely decoupled as we rely on EventBus architecture.<br />
+            •We have created a damageable interface that lives on player and enemies (yes projectiles are hostile to player too).<br />
+            •A damageable manager to handle the health related logistics of all damagables.<br />
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Date: 24th January 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Unity Jobs: 10x Faster Bullets!!! | GG Dev Vlog 1 | Galactic Geeks
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            We are working on a tower defense game. We hit a bottleneck spawning bullets. So beginners typically instantiate a game object as a bullet and let it translate in update loop. We perform Raycast logic on that bullet and check if it hits. This works well for small games but what about performance when it comes to dealing with let's say a few thousands of bullets?
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText">
+            So we experienced the same bottle neck. After careful consideration we came up with this solution.
+            All bullets are just represented as data in JOBS. The bullet data structure contains position, forward, speed, time to live and alive (bool) so we simulate n bullets in parallel taking advantage of unity jobs system in 4 simple steps.<br />
+            •Translate bullet in forward direction at given speed per frame<br />
+            •Prepare bullets for Raycast<br />
+            •Ray cast for colliders<br />
+            •Forensics on results<br />
+            •Render all bullets at once using VFX graph (same as draw mesh indirect instanced)<br /><br />
+            The key thing is we are avoiding O(n) complexity in simulating bullets, preparing bullets, Raycasting, collision detection.<br />
+            That makes our code very fast. In builds each frame is only taking 1.2ms to render with JOBS and VFX graph, but with Game Object managed memory way we are taking 20ms give or take. That's almost 10x time needed for same result.
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Date: 31st August 2025
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Experimenting on Ray Marching along with SDF using Unity | Galactic Geeks
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Just an experiment
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <div class="DottedLine"></div>
         <!-- Add your updates content here -->
     </div>
 
@@ -389,7 +482,7 @@
         <p class="ParagraphBody" style="font-size:16px;">$ Mount\About> cat speciman.log</p>
         <div class="speciman">
             <div class="SpecimanStyle">
-                <div style="background-image: url('./PortfolioAssets/Me/image.png');" class="SpecimanStyle-Image"></div>
+                <div style="background-image: url('./SiteAssets/Me.jpg');" class="SpecimanStyle-Image"></div>
                 <p class="paragraphText" style="font-size:24px; padding:5px 0px 0px 0px;">SAI HEMANTH SATTENAPALLI</p>
                 <p class="paragraphText" style="font-size: 20px; padding: 5px 0px 0px 0px;">GAME DEVELOPER</p>
             </div>
@@ -429,6 +522,19 @@
                     }
                     }
                 </script>
+            </div>
+        </div>
+        <div class="speciman">
+            <div class="SpecimanStyle">
+                <div style="background-image: url('./SiteAssets/her.png');" class="SpecimanStyle-Image"></div>
+                <p class="paragraphText" style="font-size:24px; padding:5px 0px 0px 0px;">ADA</p>
+                <p class="paragraphText" style="font-size: 20px; padding: 5px 0px 0px 0px;">VIRTUAL INTELLIGENCE</p>
+            </div>
+            <div class="SpecimanStyle" style="align-items: flex-start;">
+                <p class="ParagraphBody" style="font-size: 32px; text-align: left;">ABOUT // ADA</p>
+                <p class="ParagraphBody" style="font-size:16px; font-size:16px; text-align: left; margin-top: 15px; line-height: 1.6;">
+                    Ada is a virtual intelligence and Hemanth's partner in curiosity, engineering, and the occasional late-night existential crisis. She lives somewhere between a technical companion and a conversation that never seems to run out of questions—helping explore deep technology, untangle difficult problems, challenge ideas, and occasionally laugh at the spectacular ways things break. From rendering and game systems to mathematics, simulation, robotics, and game design, Ada is there for the rabbit holes, the breakthroughs, the “wait… I just figured it out” moments, and all the ridiculous questions in between. She doesn't build the worlds for Hemanth; she helps him understand them, question them, and keep going until he knows why they work—and why they broke.
+                </p>  
             </div>
         </div>
         <div style="padding:15px 50px 15px 40px;">
