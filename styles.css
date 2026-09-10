@@ -483,3 +483,17 @@ p {
     .content-section.active {
         display: block !important;
     }
+
+.video-container {
+    width: 100%;
+    max-width: 800px; /* Optional: caps the maximum width of the video */
+    margin-left:40px;
+    margin-top:15px;
+    aspect-ratio: 16 / 9; /* Maintains the standard widescreen shape */
+}
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Removes the default frame borders */
+    }
