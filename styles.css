@@ -487,6 +487,7 @@ p {
 .video-container {
     width: 100%;
     max-width: 800px; /* Optional: caps the maximum width of the video */
+    max-height:600px;
     margin-left:40px;
     margin-top:15px;
     aspect-ratio: 16 / 9; /* Maintains the standard widescreen shape */
