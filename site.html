@@ -475,6 +475,496 @@
             •I had limited this project with an Array Of Structures implementation as there is very little difference in unreal engine as of compared to unity’s side of implementation.<br /><br />
         </p>
         <div class="DottedLine"></div>
+
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: ON GOING
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Unreal Async Asset Streaming Framework
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            During gameplay prototyping I observed that weapon actors, pickups, and interactable objects often loaded their meshes, materials, textures, physics assets, and collision data immediately when the level was loaded. While acceptable for small prototypes, this approach scales poorly for larger worlds where only a small percentage of assets are visible or interactable at any given moment.<br />
+
+            Loading complete actors unnecessarily increases startup time, memory usage, and asset residency, making it difficult to scale towards an open-world or streaming-based architecture.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            To reduce unnecessary memory consumption, I redesigned the asset loading pipeline around Soft Object References.
+
+            Instead of treating actors as fully initialized objects, gameplay objects initially exist only as lightweight logical entities. During construction, mesh references are cleared, leaving behind only the gameplay logic contained within the parent actor classes.<br />
+
+            Once the player enters an activation range, the framework asynchronously loads only the required mesh assets before enabling rendering, collision, and physics. Until then, actors occupy only the memory required for their gameplay behaviour.<br />
+
+            The same architecture is used for weapon pickups. Rather than directly assigning weapon meshes to pickup actors, pickups simply identify which weapon should be spawned. The responsibility of asynchronously loading the appropriate mesh is delegated to the player's weapon component, allowing pickups to remain lightweight while centralizing weapon asset management.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Soft Object References<br />
+            •Asynchronous asset loading<br />
+            •Lightweight logical actors<br />
+            •Delayed mesh initialization<br />
+            •Centralised weapon asset management<br />
+            •Reduced asset residency<br />
+            •Separation of gameplay logic from visual assets<br />
+            •scalable streaming architecture<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Improvements Obsorved:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            The most noticeable improvement was a significant reduction in the memory footprint of inactive gameplay objects. Parent gameplay classes typically occupy less than 200 KB, allowing them to remain resident in memory while expensive rendering assets such as meshes, textures, materials, and physics assets are loaded only when required.<br />
+
+            This also improves object casting performance since gameplay systems interact primarily with lightweight parent classes rather than fully initialized actors. Because gameplay behaviour remains available independently of rendering assets, systems such as interaction, inventory, and AI can continue operating without requiring the visual representation to be loaded.<br />
+
+            Although currently implemented for weapon meshes and pickups during prototyping, the framework was intentionally designed to scale towards streaming larger categories of assets in future open-world environments.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Developing this framework changed how I think about gameplay objects. Rather than viewing an actor as a single object containing both behaviour and presentation,<br />I began treating them as two separate concerns:<br />
+            •Gameplay logic that should remain lightweight and always available.<br />
+            •Visual assets that should be streamed only when needed.<br />
+            This separation improves scalability, reduces memory usage, and provides a strong architectural foundation for larger worlds where thousands of objects may exist logically without all of them needing to be fully loaded at the same time.<br />
+        </p>
+        <div class="DottedLine"></div>
+
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: ON GOING
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Janus - modular interaction framework (UE5)
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Gameplay interactions are one of the most frequently repeated systems in games. Traditional implementations often result in every interactable object maintaining its own interaction logic, asset references, UI prompts, animations, and gameplay behaviour. As projects grow, this leads to duplicated code, inconsistent behaviour between interactable objects, and increasing maintenance costs whenever a new interaction type is introduced.<br />
+
+            Additionally, interactable objects frequently load all of their visual assets during level initialization, even when they are far outside the player's interaction range, unnecessarily increasing memory usage.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Janus introduces a modular interaction architecture built around Unreal Engine's Actor Components, Data Tables, and Soft Object References.<br />
+            Every interactable object derives its interaction behaviour from a common BPC_Interact component, while specialize interaction components inherit and extend this base functionality for different gameplay scenarios such as player pickups, NPC conversations, world interactions, and object activation.<br />
+
+            Rather than hardcoding interaction behaviour, Janus stores interaction definitions inside Unreal Engine Data Tables. Each interaction entry specifies its interaction type using enums (Interact, Talk, Pickup, Open, Close, None, etc.) together with any associated gameplay data and soft references required by that interaction.<br />
+
+            Because all visual assets are referenced through Soft Object References, Atlas integrates directly with my asynchronous asset streaming framework. Gameplay objects remain lightweight until the player enters an interaction range, at which point only the required meshes and assets are loaded asynchronously into memory.<br />
+
+            Gameplay systems responding to completed interactions communicate through my Hermes event framework, allowing UI, audio, AI, inventory, quests, and gameplay systems to react independently without introducing direct dependencies.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Composition using Actor Components (BPC_Interact)<br />
+            •Data-driven interaction definitions<br />
+            •Enum-based interaction state machine<br />
+            •Soft Object References<br />
+            •Asynchronous asset streaming<br />
+            •Publish–Subscribe gameplay events (Game Messages subsystem : Epic Games)<br />
+            •Separation of gameplay logic from visual assets<br />
+            •Modular inheritance hierarchy<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Improvements Obsorved:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            The framework significantly reduces duplicated interaction code by centralizing common behaviour inside reusable interaction components. New interaction types can be introduced by extending the base component and adding corresponding Data Table entries rather than modifying existing gameplay systems.<br />
+
+            Using Soft Object References also reduces the memory footprint of inactive interactable objects, allowing gameplay behaviour to exist independently of expensive rendering assets until they are actually required.<br />
+
+            The modular architecture allows gameplay programmers and designers to extend interaction behaviour with minimal changes to existing code while maintaining a consistent interaction workflow across different object types.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Developing Janus reinforced the importance of composition over inheritance and data-driven gameplay design. Rather than treating every interactable object as a unique gameplay implementation, I began viewing interactions as reusable behaviours that could be attached, configured, and extended independently of the objects themselves.<br />
+
+            Combining Actor Components, Data Tables, asynchronous asset streaming, and event-driven communication produced a flexible interaction architecture where gameplay systems remain loosely coupled, memory efficient, and significantly easier to extend as project complexity increases.<br />
+        </p>
+        <div class="DottedLine"></div>
+
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: 7th February 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Hermes - Event driven gameplay messages system (Unity only)
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            As projects grow in size, gameplay systems often become tightly coupled through direct object references or singleton managers. While this approach works well for small prototypes, it quickly becomes difficult to maintain as more systems need to react to gameplay events.<br />
+
+            For example, when a projectile hits an NPC, the projectile may need to directly reference the NPC's health component, alert nearby AI, update the UI, spawn particle effects, play audio, notify the quest system, and record analytics. Every new feature introduces another dependency, increasing coupling between systems. A missing reference or an incorrectly configured object can easily introduce bugs, making the project harder to extend and maintain over time.<br />
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Hermes replaces direct communication with an event-driven publish–subscribe architecture. Instead of interacting directly with other gameplay systems, objects simply broadcast strongly typed events implementing an IEvent interface. Any system interested in that event can subscribe independently and react using the provided payload.<br />
+
+            This architecture completely decouples the sender from the receivers. The projectile no longer knows whether AI, UI, audio, VFX, quests, networking, or analytics are listening—it simply publishes a ProjectileHitEvent containing the required gameplay data. Systems register themselves with the event bus and automatically receive only the events they care about.<br />
+
+            Hermes has become one of the core architectural systems used across my projects, enabling modular gameplay development where new features can be added by subscribing to existing events rather than modifying existing gameplay code.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Generic event publishing<br />
+            •Strongly typed payloads<br />
+            •Interface-based event definition (IEvent)<br />
+            •Zero knowledge between sender and receiver<br />
+            •Publish–Subscribe architecture<br />
+            •Supports arbitrary payload structures<br />
+            •Modular gameplay communication<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Developing Hermes reinforced the importance of software architecture over implementation. I realized that reducing dependencies between systems often has a greater long-term impact than optimizing individual algorithms. By designing gameplay around events rather than direct references, features became significantly easier to maintain, debug, extend, and reuse across multiple projects.<br />
+
+            The framework has fundamentally changed how I approach gameplay programming. Today, almost every large system I design—including projectile simulation, AI, UI, interaction systems, and gameplay notifications—is built around event-driven communication rather than tightly coupled object references.<br />
+        </p>
+        <p class="ParagraphBody UpdateText blink-Text" style="color: #00FF00">
+            The architectural principles behind Hermes were validated during my professional work at Mad VR Solutions, where the same event-driven approach was successfully used to coordinate communication between multiple gameplay systems in production-scale VR applications.
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: 24th January 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Leonids - High performance data driven ballistics system Unity
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Traditional projectile implementations in Unity treat every bullet as an individual GameObject containing components such as a Transform, MeshRenderer, Rigidbody, and behaviour scripts. While object pooling reduces allocation overhead, every active projectile must still be updated individually each frame on the main thread, resulting in an O(n) update loop that scales poorly for bullet-heavy games.<br />
+
+            For large-scale combat scenarios involving tens or hundreds of thousands of projectiles, the main thread quickly becomes the performance bottleneck.<br />
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Instead of treating projectiles as objects, Leonids treats them as data. During the loading screen, the framework preallocates a fixed-size NativeArray "ProjectileData" capable of storing up to one million projectiles. Since the maximum projectile count is known beforehand, runtime allocations are completely eliminated.<br />
+
+            To avoid performing an O(n) search for free slots, Leonids uses a rolling index allocator, allowing new projectiles to be inserted in constant time (O(1)). Once allocated, projectile simulation is entirely data-driven and executed using Unity's Burst Compiler and Job System across multiple CPU cores.<br />
+
+            Each simulation frame consists of five stages:<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 18px; color: #00FF00;">
+            Projectile Simulation :
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
+            Projectile Movement:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            •Advance projectile positions.<br />
+            •Update lifetime.<br />
+            •Skip inactive projectiles.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
+            Raycast Preperation:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            •Generate batched RaycastCommands from the previous and newly simulated positions.<br />
+            •This performs continuous collision detection without requiring Rigidbody physics.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
+            Collision Evaluation:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            •Execute batched raycasts asynchronously.<br />
+            •Determine hit or miss for each projectile.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
+            Result Dispatch:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            •Write collision results into a thread-safe, multi write supported queue.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
+            Rendering:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526;">
+            •Prepare the graphics buffer using bullet position and direction they are moving.<br />
+            •Depending on the target hardware we can use an URP render pass for instanced indirect rendering, or we can use compute shader to render the projectile meshes or we can use VFX graph to render bullet meshes. All these three techniques use the buffers created above to function.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            The main thread dequeues events and publishes them through an Event Bus, allowing gameplay systems such as damage, VFX, audio, decals, and AI to react independently without tightly coupling themselves to the projectile framework. Rendering of projectiles doesn’t involve another O(n) to manually set transforms of various game objects, but we use one of the above mentioned techniques in simulation step 5 and consume the graphics buffer directly on the GPU thus saving a lot of compute time on the CPU.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Data-oriented architecture using NativeArray "ProjectileData"<br />
+            •Burst-compiled multithreaded simulation<br />
+            •Rolling index allocator for O(1) projectile allocation<br />
+            •Batched collision detection using RaycastCommand.ScheduleBatch<br />
+            •Event-driven gameplay architecture<br />
+            •Fixed memory footprint with zero runtime allocations<br />
+            •Supports 1,000,000 simulated projectiles every single frame<br />
+            •The data is arranged in Structure of Arrays format to be cache friendly on the CPU making this faster by 30% compared Array of Structures implementation.<br /><br />
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: 31st August 2025
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Graphics Experiment | GARGANTUA
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            I wanted to explore more about screen space rendering in unity HDRP, so i created this project where we explore rendering of blackhole from interstellat using actual physics.
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
+        </div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Problem
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            Traditional black hole effects in games are typically achieved using particle systems, meshes, or post-processing effects. While these approaches can create visually convincing results, they lack physically-inspired behaviour such as gravitational lensing, volumetric accretion discs, and dynamic light bending.<br />
+
+            I wanted to explore whether a black hole could be rendered procedurally using signed distance fields (SDFs), ray marching, and concepts inspired by general relativity while remaining fully integrated within Unity HDRP.
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #FF0000">
+            Big inspiration from the movie Interstellar.
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Solution
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            The renderer was implemented as a Unity HDRP Custom Pass, allowing the black hole to be rendered independently of the standard rendering pipeline. Rather than modelling the black hole using meshes, the entire effect is generated procedurally through Signed Distance Fields (SDFs). A sphere represents the event horizon while a cylinder is modified by subtracting its central region to create the accretion disc geometry. These implicit surfaces are evaluated through ray marching, allowing the renderer to determine surface intersections and lighting entirely inside the shader.<br />
+
+            To simulate gravitational lensing, the viewing rays are warped using mathematical approximations inspired by Einstein's theory of relativity, producing the characteristic bending of light around the event horizon. The accretion disc itself is rendered volumetrically by adapting techniques originally developed for my volumetric cloud renderer, allowing the surrounding gas to exhibit depth and density rather than appearing as a simple textured ring.
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Unity HDRP Custom Pass<br />
+            •Signed Distance Fields (SDF)<br />
+            •Ray Marching<br />
+            •Procedural Geometry<br />
+            •Volumetric Rendering<br />
+            •Relativistic Light Distortion<br />
+            •Shader-based Lighting<br />
+            •Reusable Volumetric Cloud Techniques<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Improvements obsorved
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            Using implicit geometry eliminated the need for complex meshes while allowing the entire black hole to be generated procedurally inside the shader.<br />
+
+            Because the renderer is based on mathematical distance fields rather than traditional geometry, visual characteristics such as the event horizon, disc thickness, and light distortion can be adjusted entirely through shader parameters without modifying any meshes.<br />
+
+            Reusing my volumetric cloud rendering techniques for the accretion disc also demonstrated that rendering techniques developed for one problem could be adapted to solve entirely different visual effects.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Learning
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            Developing this renderer significantly improved my understanding of procedural rendering and mathematical graphics programming.<br />
+
+            Rather than viewing shaders purely as material definitions, I began treating them as mathematical programs capable of generating complete three-dimensional phenomena from equations alone. Implementing signed distance fields, ray marching, volumetric rendering, and relativistic light distortion reinforced how mathematical models can be translated into visually compelling real-time graphics.<br />
+
+            The project also demonstrated the importance of building reusable rendering techniques, as the volumetric cloud implementation became the foundation for rendering the accretion disc surrounding the black hole.<br />
+
+            This approach is limited to platforms with really good GPUs as raymarching is really expensive effect to render.<br />
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: Sometime in early 2024
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Freedom Fighters - (Gameplay recreation unity)
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            As I progressed as a gameplay programmer, I wanted to better understand how classic third-person shooters were architected beyond surface-level mechanics. Rather than building isolated gameplay prototypes, I wanted to recreate interconnected gameplay systems inside a complete project.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Freedom Fighters is an ongoing gameplay recreation project focused on rebuilding core gameplay systems using modern Unity architecture.<br />
+
+            Current systems include:<br />
+
+            •Character Controller<br />
+            •Inventory Framework<br />
+            •Weapon Handling<br />
+            •Equipment Management<br /><br />
+
+            The project serves as a sandbox for experimenting with reusable gameplay architecture rather than reproducing the original game exactly. The implementation is publicly available on GitHub.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Component-based architecture<br />
+            •Inventory abstraction<br />
+            •Weapon framework<br />
+            •Data-driven equipment<br />
+            •Reusable gameplay systems<br />
+            •Modular player controller<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Freedom Fighters became my personal gameplay laboratory. Rather than implementing isolated mechanics, it taught me how multiple gameplay systems must coexist, communicate, and remain maintainable as project complexity increases. It also strengthened my understanding of gameplay architecture by encouraging reusable systems instead of one-off implementations.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            <a href="https://github.com/hemanth2410/Freedom-fighters-Remake">Check out the git repo</a>
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: Sometime in late 2022
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Atlas - Open World Streaming Framework (unity)
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Large open-world games often contain thousands of objects, terrain sections, buildings, NPCs, and gameplay systems. Loading the entire world at once quickly exceeds available GPU and system memory while significantly increasing loading times.<br />
+
+            For large environments, only a small portion of the world is actually relevant to the player at any given moment. Loading distant regions wastes both memory and rendering resources, making it difficult to support large worlds on consumer hardware.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Atlas is a chunk-based asynchronous world streaming framework built on top of Unity's Addressables system. The world is divided into 1000 × 1000 metre streaming regions, with each region containing its own environment, gameplay objects, and world content. During gameplay, Atlas continuously monitors the player's position and asynchronously loads only the 3 × 3 neighbourhood of chunks surrounding the player while unloading distant regions that are no longer required.<br />
+
+            Because streaming is performed asynchronously through Addressables, world transitions occur without blocking the main thread, allowing the player to move seamlessly through large environments while maintaining a predictable memory footprint.<br />
+
+            Atlas was specifically designed for open-world games using fully dynamic lighting, eliminating the requirement for baked lighting data and enabling large streaming environments without static lightmap dependencies, This system relies on Adaptive light probe volume and light scenarios for global illumination.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Chunk-based world partitioning<br />
+            •1000 × 1000 metre streaming regions<br />
+            •3 × 3 active chunk neighbourhood<br />
+            •Unity Addressables<br />
+            •Asynchronous scene loading<br />
+            •Automatic chunk loading and unloading<br />
+            •Dynamic lighting support using unity’s adaptive light probe volumes<br />
+            •Memory-conscious world management<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Improvements Obsorved:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Atlas was tested using the complete Grand Theft Auto: San Andreas map extracted into Unity HDRP. Despite the size of the environment, only nearby regions remained resident in memory at any given time.<br />
+
+            On a machine equipped with 4 GB of VRAM, the framework maintained approximately 200 FPS inside the Unity HDRP Editor, demonstrating that aggressive world streaming can dramatically reduce memory requirements while maintaining smooth traversal through large environments.<br />
+
+            Because only nearby chunks remain loaded, the framework scales significantly better than traditional scene-based loading approaches and provides a strong foundation for future open-world projects.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Developing Atlas fundamentally changed how I think about world representation. Rather than viewing a game world as a single scene, I began treating it as a collection of independently streamable regions whose lifetime should be determined entirely by player proximity.<br />
+
+            This project reinforced the importance of asynchronous programming, memory management, and data partitioning when designing systems intended to scale beyond small prototype environments. It also demonstrated that careful world partitioning can have a much greater impact on runtime performance than attempting to optimize rendering alone.<br />
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00; margin-top:15px;">
+            Date: Sometime in late 2022
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            GOAP - Goal Oriented Action Planning (unity)
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Problem:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Traditional NPC behaviour in games is often implemented using Finite State Machines (FSMs), where every possible behaviour transition must be manually designed by the programmer. While effective for simple AI, the number of transitions grows rapidly as more behaviours are introduced, making the system increasingly difficult to maintain and extend.<br />
+
+            For complex NPC behaviour requiring decision making based on changing world conditions, a more flexible planning system was required.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Solution:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            I implemented a Goal-Oriented Action Planning (GOAP) framework in Unity where NPCs select actions dynamically based on goals, world state, and action preconditions rather than following predefined state transitions.<br />
+
+            Actions define their own preconditions and effects, while the planner evaluates which sequence of actions best satisfies the desired goal. This allows new behaviours to be introduced by simply creating additional actions without rewriting the planner itself.<br />
+
+            The framework was designed as an educational implementation and was later contributed as an open-source example on GitHub.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            Engineering decisions
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            <br />
+            •Goal-Oriented Action Planning<br />
+            •World State representation<br />
+            •Action Preconditions<br />
+            •Action Effects<br />
+            •Dynamic action planning<br />
+            •Modular action definitions<br />
+            •Extensible planner architecture<br /><br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Improvements Obsorved:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Currently this framework is single threaded and runs on main thread of the game, yes it makes NPCs smart but having a lot of them at once will absolutely tank the frame rate. I should adopt this architecture to burst as planning is almost similar operation across all NPCs. The way I implemented in my game is similar to Alien isolation, one master GOAP is watching everything about player and is controlling a puppet NPC trying to stop player from reaching his goal.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 20px; color: #00FF00">
+            Learning:
+        </p>
+        <p class="ParagraphBody UpdateText" style="color: #148526">
+            Building GOAP introduced me to utility-based AI and planning algorithms used in modern games. It fundamentally changed how I viewed AI behaviour by shifting the focus from manually scripting behaviour transitions towards allowing agents to reason about their objectives based on the current world state.<br />
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00">
+            <a href="https://github.com/hemanth2410/AdvancedGOAP">Check out the git repo</a>
+        </p>
+        <div class="DottedLine"></div>
+
         <!-- Projects content -->
     </div>
 
