@@ -2,6 +2,7 @@
     background: black;
     height: 100%;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 body {
     margin: 0;
@@ -208,6 +209,7 @@ p {
         border-color: #00FF00;
         background-color: #00FF00;
     }
+
 .IntroButtonStyle-selected {
     height: 40px;
     background-color: #10540e;
@@ -222,6 +224,13 @@ p {
     justify-content: center;
     pointer-events: auto;
 }
+
+.IntroButtonStyle, .IntroButtonStyle-selected {
+    transition: all 0.15s ease-in-out; /* Smooth hover transition */
+}
+    .IntroButtonStyle:active, .IntroButtonStyle-selected:active {
+        transform: scale(0.96); /* Subtle button push down on click */
+    }
 .ButtonText {
     font-family: 'Iceland';
     color: #00FF00;
@@ -526,12 +535,25 @@ p {
 
 .content-section {
     display: none !important;
+    animation: fadeIn 0.25s ease-in-out;
 }
 
     /* Only display the active section */
     .content-section.active {
         display: block !important;
     }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .video-container {
     width: 100%;
@@ -583,3 +605,32 @@ p {
     height: 1px;
     margin-top: 15px;
 }
+
+a {
+    transition: color 0.2s, text-shadow 0.2s;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #00FF00 !important;
+        text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+        text-decoration: underline;
+    }
+
+/* Custom Terminal Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10540e;
+    border-radius: 2px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00FF00;
+    }
