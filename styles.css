@@ -549,14 +549,14 @@ p {
     }
 .UpdateText {
     font-size: 16px;
-    color: #3D993D;
+    color: #20cc20;
     margin-left: 40px;
     margin-top: 15px;
     line-height:1.5;
 }
 .UpdateFlow {
     font-size: 16px;
-    color: #3D993D;
+    color: #20cc20;
     justify-content: center;
     text-align: center;
     align-items: center;
