@@ -995,34 +995,67 @@
                 </p>
                 <div class="ButtonWrapper containerFlex" style="padding:0px">
                     <button class="IntroButtonStyle" id="ResumeBtn">
-                        <span class="ButtonText">DOWNLOAD RESUME</span>
+                        <span class="ButtonText">EXTENDED RESUME</span>
                     </button>
                     <div>
                         <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
                     </div>
                 </div>
                 <script>
-                    // --- RESUME BUTTON LOGIC ---
-                    const resumeBtn = document.getElementById('ResumeBtn');
-                    const resumeTextElement = document.getElementById('downloadText');
-                    const resumePhrase = "Downloading...";
-                    let resumeIndex = 0;
-                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
+                   (function() {
+                const resumeBtn = document.getElementById('ResumeBtn');
+                const resumeTextElement = document.getElementById('downloadText');
+                const resumePhrase = "Downloading...";
+                let resumeIndex = 0;
+                const pdfUrl = "./PortfolioAssets/Resume.pdf";
 
-                    resumeBtn.addEventListener('click', function() {
+                resumeBtn.addEventListener('click', function() {
                     resumeTextElement.style.display = 'inline';
                     typeResume();
-                    }, { once: true });
+                }, { once: true });
 
-                    function typeResume() {
+                function typeResume() {
                     if (resumeIndex < resumePhrase.length) {
-                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
-                    resumeIndex++;
-                    setTimeout(typeResume, 180);
+                        resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
+                        resumeIndex++;
+                        setTimeout(typeResume, 180);
                     } else {
-                    window.open(pdfUrl, '_blank');
+                        window.open(pdfUrl, '_blank');
                     }
+                }
+            })();
+                </script>
+                <div class="ButtonWrapper containerFlex" style="padding:0px">
+                    <button class="IntroButtonStyle" id="SResumeBtn">
+                        <span class="ButtonText">STANDARD RESUME</span>
+                    </button>
+                    <div>
+                        <span class="HiddenText textAnim" id="SdownloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                    </div>
+                </div>
+                <script>
+                    (function() {
+                const SresumeBtn = document.getElementById('SResumeBtn');
+                const SresumeTextElement = document.getElementById('SdownloadText');
+                const SresumePhrase = "Downloading...";
+                let SresumeIndex = 0;
+                const SpdfUrl = "./PortfolioAssets/StandardResume.pdf";
+
+                SresumeBtn.addEventListener('click', function() {
+                    SresumeTextElement.style.display = 'inline';
+                    typeResume();
+                }, { once: true });
+
+                function typeResume() {
+                    if (SresumeIndex < SresumePhrase.length) {
+                        SresumeTextElement.textContent += SresumePhrase.charAt(SresumeIndex);
+                        SresumeIndex++;
+                        setTimeout(typeResume, 180);
+                    } else {
+                        window.open(SpdfUrl, '_blank');
                     }
+                }
+            })();
                 </script>
             </div>
         </div>
