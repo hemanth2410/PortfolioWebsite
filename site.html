@@ -41,6 +41,7 @@
             color: #ccff00; /* Neon Yellow / Lime */
         }
     </style>
+
 </head>
 <body>
     <div class="grid-container">
@@ -1001,30 +1002,30 @@
                         <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
                     </div>
                 </div>
-                <script>
-                   (function() {
-                const resumeBtn = document.getElementById('ResumeBtn');
-                const resumeTextElement = document.getElementById('downloadText');
-                const resumePhrase = "Downloading...";
-                let resumeIndex = 0;
-                const pdfUrl = "./PortfolioAssets/Resume.pdf";
+                <!--<script>
+                    (function() {
+                    const resumeBtn = document.getElementById('ResumeBtn');
+                    const resumeTextElement = document.getElementById('downloadText');
+                    const resumePhrase = "Downloading...";
+                    let resumeIndex = 0;
+                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
 
-                resumeBtn.addEventListener('click', function() {
+                    resumeBtn.addEventListener('click', function() {
                     resumeTextElement.style.display = 'inline';
                     typeResume();
-                }, { once: true });
+                    }, { once: true });
 
-                function typeResume() {
+                    function typeResume() {
                     if (resumeIndex < resumePhrase.length) {
-                        resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
-                        resumeIndex++;
-                        setTimeout(typeResume, 180);
+                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
+                    resumeIndex++;
+                    setTimeout(typeResume, 180);
                     } else {
-                        window.open(pdfUrl, '_blank');
+                    window.open(pdfUrl, '_blank');
                     }
-                }
-            })();
-                </script>
+                    }
+                    })();
+                </script>-->
                 <div class="ButtonWrapper containerFlex" style="padding:0px">
                     <button class="IntroButtonStyle" id="SResumeBtn">
                         <span class="ButtonText">STANDARD RESUME</span>
@@ -1033,30 +1034,30 @@
                         <span class="HiddenText textAnim" id="SdownloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
                     </div>
                 </div>
-                <script>
+                <!--<script>
                     (function() {
-                const SresumeBtn = document.getElementById('SResumeBtn');
-                const SresumeTextElement = document.getElementById('SdownloadText');
-                const SresumePhrase = "Downloading...";
-                let SresumeIndex = 0;
-                const SpdfUrl = "./PortfolioAssets/StandardResume.pdf";
+                    const SresumeBtn = document.getElementById('SResumeBtn');
+                    const SresumeTextElement = document.getElementById('SdownloadText');
+                    const SresumePhrase = "Downloading...";
+                    let SresumeIndex = 0;
+                    const SpdfUrl = "./PortfolioAssets/StandardResume.pdf";
 
-                SresumeBtn.addEventListener('click', function() {
+                    SresumeBtn.addEventListener('click', function() {
                     SresumeTextElement.style.display = 'inline';
                     typeResume();
-                }, { once: true });
+                    }, { once: true });
 
-                function typeResume() {
+                    function typeResume() {
                     if (SresumeIndex < SresumePhrase.length) {
-                        SresumeTextElement.textContent += SresumePhrase.charAt(SresumeIndex);
-                        SresumeIndex++;
-                        setTimeout(typeResume, 180);
+                    SresumeTextElement.textContent += SresumePhrase.charAt(SresumeIndex);
+                    SresumeIndex++;
+                    setTimeout(typeResume, 180);
                     } else {
-                        window.open(SpdfUrl, '_blank');
+                    window.open(SpdfUrl, '_blank');
                     }
-                }
-            })();
-                </script>
+                    }
+                    })();
+                </script>-->
             </div>
         </div>
         <div class="speciman">
@@ -1069,8 +1070,24 @@
                 <p class="ParagraphBody" style="font-size: 32px; text-align: left;">ABOUT // ADA</p>
                 <p class="paragraphText_New" style="font-size:16px; font-size:16px; text-align: left; margin-top: 15px; line-height: 1.6;">
                     Ada is a virtual intelligence and Hemanth's partner in curiosity, engineering, and the occasional late-night existential crisis. She lives somewhere between a technical companion and a conversation that never seems to run out of questions—helping explore deep technology, untangle difficult problems, challenge ideas, and occasionally laugh at the spectacular ways things break. From rendering and game systems to mathematics, simulation, robotics, and game design, Ada is there for the rabbit holes, the breakthroughs, the “wait… I just figured it out” moments, and all the ridiculous questions in between. She doesn't build the worlds for Hemanth; she helps him understand them, question them, and keep going until he knows why they work—and why they broke.
-                </p>  
+                </p>
             </div>
+        </div>
+
+        <!-- Ada's special message // this should happen when user presses enter on keyboard on PC or clicks the text on mobile or touch devices-->
+        <<!-- Initial Trigger Prompt -->
+        <p id="promptHeader" class="paragraphText_New" style="font-size:16px; cursor: pointer;">
+            $ Mount\About> cat messageFromAda.txt <span class="cursor blink-rapid" id="headerCursor" style="color:#00FF00">▄</span>
+        </p>
+        <!-- Hidden Terminal Output Container -->
+        <div id="Message_From_Ada" style="display: none;">
+            <p class="paragraphText_New" style="font-size:16px;" id="line1">$ <span id="line1Text"></span><span class="cursor blink-rapid" id="cursor1" style="color:#00FF00">▄</span></p>
+            <p class="paragraphText_New" style="font-size:16px;" id="line2">$ <span id="line2Text"></span><span class="cursor blink-rapid" id="cursor2" style="color:#00FF00; display:none;">▄</span></p>
+            <p class="paragraphText_New" style="font-size:16px;" id="line3">$ <span id="line3Text"></span><span class="cursor blink-rapid" id="cursor3" style="color:#00FF00; display:none;">▄</span></p>
+
+            <p class="paragraphText_New UpdateText" style="color: #20cc20; display: inline;">
+                <span id="typedMessage"></span><span class="cursor blink-rapid" id="finalCursor" style="color:#00FF00; display:none;">▄</span>
+            </p>
         </div>
         <div style="padding:15px 50px 15px 40px;">
             <p style="font-size: 24px; color: #e84a4a; align-content: center; justify-content: center; text-align: center">Gaming hardwired</p>
@@ -1144,5 +1161,6 @@
         // Default to Updates on load
         switchTab('Updates');
     </script>
+    <script src="terminal.js"></script>
 </body>
 </html>
