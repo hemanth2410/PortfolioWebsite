@@ -73,8 +73,40 @@
     <div style="width: auto; height: 3px; background-color:#10540e; margin:0px; padding:0px"></div>
     <!-- Content Sections -->
     <!-- Set Updates as active by default -->
+    <!--<iframe src="https://archive.org/embed/npc-follow" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>-->
+
     <div id="Updates" class="content-section active" style="padding:15px 50px 15px 40px;">
         <p class="paragraphText_New" style="font-size:16px;">$ Mount\Updates> cat latest.log</p>
+        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
+            Date: 15th September 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
+            A modular character system
+        </p>
+        <p class="paragraphText_New UpdateText" style="color: #20cc20">
+            one of the first video games i played was freedom fighters back in 2009 or something. I was fascinated by how player can recruit near by friendly NPCs to follow him and fight with him, here is the dev vlog1 of the system i am building for it.
+        </p>
+        <div class="video-container">
+            <iframe src="https://archive.org/embed/npc-follow" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+        </div>
+        <p class="paragraphText_New UpdateText">
+            This has to be one of the best projects i am working on in my free time.<br />
+            As it uses my event system for propogating inputs across the world and allows player -> world, world -> world, world -> player communications without any direct reference.<br />
+
+            So far, I’ve implemented:<br />
+
+            • Root motion for characters.<br />
+            • Evaluating movement delta on OnAnimatorMove().<br />
+            • Using the movement delta on character motor. It is responsible for making the character move.<br />
+            • Inputs are given to character input class then it sends the movement intent to character motor.<br />
+            • Character motor communicates it with the animator and gets the movement delta to move the character controller.<br />
+            • If the character is NPC, the desired direction is computed and the intent is communicated to characer motor.<br />
+            • Same as above character motor communicates the intent with animator and gets delta back and applies the movement.<br />
+            • Now the player when pressing the E key, does a overlap sphere and identifies the usable NPCs and changes their state to NPC_Follow.<br />
+            • the NPCs will start following the player<br /><br />
+            I dont know how far i can take this system, same architecture can be applied on Enemy NPCs for example and with absolutely no additional code the character should work.
+        </p>
+        <div class="DottedLine"></div>
         <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
             Date: 2nd September 2026
         </p>
