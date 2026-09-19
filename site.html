@@ -78,6 +78,39 @@
     <div id="Updates" class="content-section active" style="padding:15px 50px 15px 40px;">
         <p class="paragraphText_New" style="font-size:16px;">$ Mount\Updates> cat latest.log</p>
         <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
+            Date: 19th September 2026
+        </p>
+        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
+            A modular character system Vlog #2
+        </p>
+        <p class="paragraphText_New UpdateText" style="color: #20cc20">
+            Today i managed to finish jump mechanic for player with root motion animations. needless to say there are too many work arounds involved in this mechanic which i am not very proud of.
+        </p>
+        <div class="video-container">
+            <iframe src="https://archive.org/embed/jump-gravity" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+        </div>
+        <p class="paragraphText_New UpdateText">
+            So now i am moving forward with making a playable level of my own.
+
+            So far, things i have implemented:<br />
+
+            • All from 15th september 2026.<br />
+            • A proper jump mechanic for various distances and speeds.<br />
+            • Fixed the bug whee NPCs over shoot the desired position because of low frame rate. A reliable character motor code.<br />
+            • NPCs now form a formation behind the player instead of blindly following the player and all NPCs aiming for the same location as the player.<br />
+            • Character motor communicates it with the animator and gets the movement delta to move the character controller.<br /><br />
+            So far, things i might do in fututre logs:<br />
+            • Add a proper brain for NPC. A master brain orchistrating half brain less intelligent NPCs.<br />
+            • Proper Follow, Attack, Defence responses for commands.<br />
+            • A less intelligent state machine per NPC to be situationally and spatially aware.<br />
+            • Make NPCs jump the gap like player<br />
+            • A bare minimum debug and ingame UI<br /><br />
+            I honestly have no idea at this point how heavy the impact on performance will be for choosing this approach for making characters and character controllers.<br />
+            There is a saying in game development "Death by thousand Ticks" - Some Chad Game Developer.<br />
+            honestly after complete profiling should there be a need for optimization i will have to explore based on the needs of this game.
+        </p>
+        <div class="DottedLine"></div>
+        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
             Date: 15th September 2026
         </p>
         <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
