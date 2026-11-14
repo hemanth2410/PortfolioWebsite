@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Galactic Geeks | Hemanth</title>
     <!-- Browser Tab Icon (Favicon) -->
@@ -69,21 +69,31 @@
                     const enterPhrase = "Booting...";
                     let enterIndex = 0;
 
-                    enableBtn.addEventListener('click', function() {
-                    enterTextElement.style.display = 'inline';
-                    typeEnter();
-                    }, { once: true });
+                    let booting = false;
+                    function startBoot() {
+                        if (booting) return;
+                        booting = true;
+                        enterTextElement.style.display = 'inline';
+                        typeEnter();
+                    }
+
+                    enableBtn.addEventListener('click', startBoot);
+                    window.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            startBoot();
+                        }
+                    });
 
                     function typeEnter() {
-                    if (enterIndex < enterPhrase.length) {
-                    enterTextElement.textContent += enterPhrase.charAt(enterIndex);
-                    enterIndex++;
-                    setTimeout(typeEnter, 180);
-                    } else {
-                    setTimeout(() => {
-                        window.location.href = 'site.html';
-                    });
-                    }
+                        if (enterIndex < enterPhrase.length) {
+                            enterTextElement.textContent += enterPhrase.charAt(enterIndex);
+                            enterIndex++;
+                            setTimeout(typeEnter, 100);
+                        } else {
+                            setTimeout(() => {
+                                window.location.href = 'site.html';
+                            }, 150);
+                        }
                     }
                 </script>
             </div>

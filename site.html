@@ -1,23 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Galactic Geeks | Hemanth</title>
+    <title>Galactic Geeks | Hemanth - Game Systems Engineer & Rendering</title>
+    
     <!-- Browser Tab Icon (Favicon) -->
     <link rel="icon" type="image/x-icon" href="./SiteAssets/40FF00.png">
     <link rel="apple-touch-icon" href="./SiteAssets/40FF00.png">
+    
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Galactic Geeks | Hemanth">
-    <meta name="description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <meta name="title" content="Galactic Geeks | Hemanth - Game Systems Engineer & Rendering">
+    <meta name="description" content="System Profile // Game Dev, Rendering, XR, Simulation & Low-Level Systems.">
 
     <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
-    <meta property="og:title" content="Galactic Geeks | Hemanth">
-    <meta property="og:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
-    <!-- MUST be an absolute URL for WhatsApp to read it properly -->
+    <meta property="og:title" content="Galactic Geeks | Hemanth - Systems & Rendering Engineer">
+    <meta property="og:description" content="System Profile // Game Dev, Rendering, XR, Simulation & Low-Level Systems.">
     <meta property="og:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="512">
@@ -26,1235 +28,1062 @@
     <!-- Twitter Preview Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
-    <meta name="twitter:title" content="Galactic Geeks | Hemanth">
-    <meta name="twitter:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <meta name="twitter:title" content="Galactic Geeks | Hemanth - Systems & Rendering Engineer">
+    <meta name="twitter:description" content="System Profile // Game Dev, Rendering, XR, Simulation & Low-Level Systems.">
     <meta name="twitter:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
-    <title>Custom Link Colors</title>
-    <style>
-        /* Default unvisited link */
-        a:link {
-            color: #00ffff; /* Cyan */
-        }
-
-        /* Visited link */
-        a:visited {
-            color: #ccff00; /* Neon Yellow / Lime */
-        }
-    </style>
-
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item grid-item-left">
-            <p style="font-size:26px; color:#00FF00;" class="blink-rapid">█</p>
-            <p style="font-size:24px; color:#00FF00;">GALACTIC TERMINAL</p>
-        </div>
-        <div class="grid-item grid-item-right">
-            <button class="IntroButtonStyle-selected nav-btn" data-target="Updates">
-                <span class="ButtonText">UPDATES</span>
-            </button>
-            <button class="IntroButtonStyle nav-btn" data-target="Projects">
-                <span class="ButtonText">PROJECTS</span>
-            </button>
-            <button class="IntroButtonStyle nav-btn" data-target="AboutMe">
-                <span class="ButtonText">ABOUT ME</span>
-            </button>
-        </div>
-        <div class="grid-item grid-item-left">
-            <span style="width:15px"></span>
-            <div class="Code-text textAnim">
-                Life as a game dev
+
+    <!-- STICKY TERMINAL COMMAND HEADER -->
+    <header class="terminal-nav-header">
+        <div class="grid-container">
+            <div class="grid-item-left">
+                <span style="font-size:24px; color:var(--term-green);" class="blink-rapid">█</span>
+                <div class="term-brand">
+                    <span class="term-brand-title">GALACTIC TERMINAL</span>
+                    <span class="term-brand-sub">HEMANTH // GAME SYSTEMS &bull; RENDERING &bull; XR &bull; SIMULATION</span>
+                </div>
             </div>
+            <nav class="grid-item-right" aria-label="Terminal Navigation">
+                <button class="IntroButtonStyle-selected nav-btn" data-target="Updates" title="Press 1 or U">
+                    <span class="ButtonText"><span class="term-key">[1]</span> UPDATES</span>
+                </button>
+                <button class="IntroButtonStyle nav-btn" data-target="Projects" title="Press 2 or P">
+                    <span class="ButtonText"><span class="term-key">[2]</span> PROJECTS</span>
+                </button>
+                <button class="IntroButtonStyle nav-btn" data-target="Experience" title="Press 3 or E">
+                    <span class="ButtonText"><span class="term-key">[3]</span> EXPERIENCE</span>
+                </button>
+                <button class="IntroButtonStyle nav-btn" data-target="AboutMe" title="Press 4 or A">
+                    <span class="ButtonText"><span class="term-key">[4]</span> ABOUT ME</span>
+                </button>
+            </nav>
         </div>
-        <div class="grid-item">
-
-        </div>
-    </div>
-    <div style="width: auto; height: 3px; background-color:#10540e; margin:0px; padding:0px"></div>
-    <!-- Content Sections -->
-    <!-- Set Updates as active by default -->
-    <!--<iframe src="https://archive.org/embed/npc-follow" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>-->
-
-    <div id="Updates" class="content-section active" style="padding:15px 50px 15px 40px;">
-        <p class="paragraphText_New" style="font-size:16px;">$ Mount\Updates> cat latest.log</p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 14th November 2026
-        </p>
-
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            A new direction - Exploring Game Design and Story Writing
-        </p>
-
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            For the past several years, most of my time has gone into understanding how games work beneath the surface. Writing gameplay systems, building rendering pipelines, experimenting with GPU simulations, and solving technical challenges have been a major part of my journey as a developer.
-            <br /><br />
-
-            I still enjoy engineering and I don't see myself moving away from it entirely. However, lately I've been finding myself increasingly interested in another side of game development: the creative process behind the experiences we build.
-            <br /><br />
-
-            I've been seriously considering moving towards game design, narrative architecture, worldbuilding, and story writing. I want to explore character development, storytelling, gameplay experiences, and how mechanics can work together with a narrative to create something memorable.
-            <br /><br />
-
-            My engineering background will always be a part of how I approach game development. Understanding the underlying systems gives me a different perspective on designing mechanics and player experiences. I would like to bring these two sides closer together rather than treat them as separate disciplines.
-            <br /><br />
-
-            I'm currently experimenting with story concepts and writing down ideas, exploring different worlds and possibilities. This is still a learning process, and I have a lot to discover before I know where it will lead.
-            <br /><br />
-
-            Perhaps after spending so much time building the machinery behind games, it's time to explore the stories and experiences that machinery can bring to life.
-        </p>
-
-        <div class="DottedLine"></div>
-
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 19th September 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            A modular character system Vlog #2
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Today i managed to finish jump mechanic for player with root motion animations. needless to say there are too many work arounds involved in this mechanic which i am not very proud of.
-        </p>
-        <div class="video-container">
-            <iframe src="https://archive.org/embed/jump-gravity" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            So now i am moving forward with making a playable level of my own.<br />
-
-            So far, things i have implemented:<br />
-
-            • All from 15th september 2026.<br />
-            • A proper jump mechanic for various distances and speeds.<br />
-            • Fixed the bug where NPCs over shoot the desired position because of low frame rate. A reliable character motor code.<br />
-            • NPCs now form a formation behind the player instead of blindly following the player and all NPCs aiming for the same location as the player. Yes i have created a "Master brain" to orchistrate movement<br />
-            • Character motor communicates it with the animator and gets the movement delta to move the character controller.<br /><br />
-            So far, things i might do in fututre logs:<br />
-            • Add a proper brain for NPC. A master brain orchistrating half brain less intelligent NPCs.<br />
-            • Proper Follow, Attack, Defence responses for commands.<br />
-            • A less intelligent state machine per NPC to be situationally and spatially aware.<br />
-            • Make NPCs jump the gap like player<br />
-            • A bare minimum debug and ingame UI<br /><br />
-            I honestly have no idea at this point how heavy the impact on performance will be for choosing this approach for making characters and character controllers.<br />
-            There is a saying in game development "Death by thousand Ticks" - Some Chad Game Developer.<br />
-            honestly after complete profiling should there be a need for optimization i will have to explore based on the needs of this game.
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 15th September 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            A modular character system
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            one of the first video games i played was freedom fighters back in 2009 or something. I was fascinated by how player can recruit near by friendly NPCs to follow him and fight with him, here is the dev vlog1 of the system i am building for it.
-        </p>
-        <div class="video-container">
-            <iframe src="https://archive.org/embed/npc-follow" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            This has to be one of the best projects i am working on in my free time.<br />
-            As it uses my event system for propogating inputs across the world and allows player -> world, world -> world, world -> player communications without any direct reference.<br />
-
-            So far, I’ve implemented:<br />
-
-            • Root motion for characters.<br />
-            • Evaluating movement delta on OnAnimatorMove().<br />
-            • Using the movement delta on character motor. It is responsible for making the character move.<br />
-            • Inputs are given to character input class then it sends the movement intent to character motor.<br />
-            • Character motor communicates it with the animator and gets the movement delta to move the character controller.<br />
-            • If the character is NPC, the desired direction is computed and the intent is communicated to characer motor.<br />
-            • Same as above character motor communicates the intent with animator and gets delta back and applies the movement.<br />
-            • Now the player when pressing the E key, does a overlap sphere and identifies the usable NPCs and changes their state to NPC_Follow.<br />
-            • the NPCs will start following the player<br /><br />
-            I dont know how far i can take this system, same architecture can be applied on Enemy NPCs for example and with absolutely no additional code the character should work.
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 2nd September 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Directx 11 render engine
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            A custom real-time rendering engine developed from first principles to understand the architecture and mathematics behind modern game rendering pipelines rather than relying entirely on an existing engine's abstractions.
-            The project began with rendering a basic triangle and progressively evolved into a complete real-time renderer supporting dynamic scene manipulation, asset importing, physically based rendering, render queues, a render graph, dynamic lighting, shadow mapping, GPU filtering, and skybox rendering.
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            After spending way too much time questioning my life choices, the renderer is finally starting to look like an actual rendering engine. 😅<br />
-
-            This is my progress on the DirectX 11 renderer I’m building from scratch as part of my own game engine.<br /><br />
-
-            So far, I’ve implemented:<br />
-
-            • Dynamic render queue and frame composition<br />
-            • Render graph architecture<br />
-            • PBR material/shader handling<br />
-            • Stencil-based mesh selection<br />
-            • Screen-space outlines<br />
-            • Gaussian blur<br />
-            • Full-screen shader passes<br />
-            • Dynamic shader/material parameter handling<br />
-            • Basic lighting and scene rendering<br /><br />
-
-            The goal isn't to recreate an existing engine feature-for-feature. I’m building this to understand what actually happens underneath the abstractions I normally work with in Unity and Unreal Engine.
-
-            The next major step is soft shadow rendering, after which I'll start focusing on improving the renderer's architecture, performance, and visual quality.
-
-            There will probably be a few more “why is everything white?” moments along the way. 😂<br /><br />
-
-            Built with:<br />
-            C++<br />
-            DirectX 11<br />
-            HLSL<br />
-            ImGui<br />
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 7th February 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Improving Combat Readability & Core Systems | GG dev Vlog 3
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Dev Vlog #3 – Improving Combat Readability & Core Systems
-            In this dev vlog, I’m focusing on combat readability and feedback — making sure the player always understands what is happening, what is being targeted, and what is about to happen.
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            Here’s what’s new:<br />
-            🔹 Lock-On Turret Rework<br />
-            The lock-on turret now has a clear anticipation window.
-            Instead of firing instantly, it highlights its target for a few seconds before shooting, giving the player time to react and reposition.<br />
-            🔹 Area-of-Effect Turret (Post Box Tower)<br />
-            This turret targets the first enemy that enters its area.
-            Once that enemy dies or leaves the zone, it automatically switches to the next valid target.
-            The current target is visually highlighted to keep targeting behavior readable.<br />
-            🔹 Suicide Capacitor<br />
-            A new enemy type that self-destructs after a short delay.
-            Its pulsing animation speeds up as it gets closer to exploding, clearly communicating danger and timing to the player.<br />
-            🔹 Global Particle System Manager<br />
-            All particle effects are now handled through a single global pool.
-            When an object dies, it simply requests the appropriate effect at its position — keeping effects consistent and performance-friendly.<br />
-            🔹 Threat Readability System<br /><br />
-            Whenever an enemy is being targeted:<br />
-            •A reticle is placed on the enemy<br />
-            •A line renderer connects the turret and its target<br />
-            •This system is fully pooled and event-driven, ensuring clear visual feedback without unnecessary overhead.<br />
-            The goal of these changes is simple:<br />
-            Better clarity, better anticipation, and better player decision-making.
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 28th January 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            How We Built a Scalable Tower Defense System | GG Dev Vlog 2 | Galactic Geeks
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/r8Ov_UH2Y88?si=isKly3P2o6PzPnvR" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            •Oh one more update for our projectile system (we have made a coded color in a float, so the buffer type can remain vector4, GPUs love packed buffer)<br />
-            •player can build multiple towers in the level to attack enemies.<br />
-            •Enemies, Sounds, Death particle effects are all object pooled for better performance<br />
-            •Almost all of our systems are completely decoupled as we rely on EventBus architecture.<br />
-            •We have created a damageable interface that lives on player and enemies (yes projectiles are hostile to player too).<br />
-            •A damageable manager to handle the health related logistics of all damagables.<br />
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 24th January 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Unity Jobs: 10x Faster Bullets!!! | GG Dev Vlog 1 | Galactic Geeks
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            We are working on a tower defense game. We hit a bottleneck spawning bullets. So beginners typically instantiate a game object as a bullet and let it translate in update loop. We perform Raycast logic on that bullet and check if it hits. This works well for small games but what about performance when it comes to dealing with let's say a few thousands of bullets?
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="paragraphText_New UpdateText">
-            So we experienced the same bottle neck. After careful consideration we came up with this solution.
-            All bullets are just represented as data in JOBS. The bullet data structure contains position, forward, speed, time to live and alive (bool) so we simulate n bullets in parallel taking advantage of unity jobs system in 4 simple steps.<br />
-            •Translate bullet in forward direction at given speed per frame<br />
-            •Prepare bullets for Raycast<br />
-            •Ray cast for colliders<br />
-            •Forensics on results<br />
-            •Render all bullets at once using VFX graph (same as draw mesh indirect instanced)<br /><br />
-            The key thing is we are avoiding O(n) complexity in simulating bullets, preparing bullets, Raycasting, collision detection.<br />
-            That makes our code very fast. In builds each frame is only taking 1.2ms to render with JOBS and VFX graph, but with Game Object managed memory way we are taking 20ms give or take. That's almost 10x time needed for same result.
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Date: 31st August 2025
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Experimenting on Ray Marching along with SDF using Unity | Galactic Geeks
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Just an experiment
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <div class="DottedLine"></div>
-        <!-- Add your updates content here -->
-    </div>
-
-    <div id="Projects" class="content-section" style="padding:15px 50px 15px 40px;">
-        <p class="paragraphText_New" style="font-size:16px;">$ Mount\Projects> ls -la</p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: 2nd September 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Directx 11 render engine
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            A custom real-time rendering engine developed from first principles to understand the architecture and mathematics behind modern game rendering pipelines rather than relying entirely on an existing engine's abstractions.
-            The project began with rendering a basic triangle and progressively evolved into a complete real-time renderer supporting dynamic scene manipulation, asset importing, physically based rendering, render queues, a render graph, dynamic lighting, shadow mapping, GPU filtering, and skybox rendering.
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Development flow
-        </p>
-        <p class="UpdateFlow">
-            Triangle Rasterization
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Dynamic Cube & Scene Manipulation
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Texture Mapping
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Assimp Asset Importing
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Custom Transform System
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            First-Person Scene Controller
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Lighting & Lambertian Shading
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            GLTF Analysis & PBR Metallic-Roughness
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Alpha Blending
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Render Queue Architecture
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Render Graph
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Shadow Mapping
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            PCF & Slope-Scaled Bias
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Point-Light Cubemap Shadows
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Skybox & Final Renderer
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Built the rendering pipeline independently instead of depending on an existing game-engine rendering abstraction, requiring direct management of rendering passes, GPU resources, shaders, transforms, and scene state.<br />
-            •Replaced a sequential collection of rendering operations with a Render Graph responsible for coordinating frame clearing, shadow rendering, lighting, object highlighting, and composition.<br />
-            •Implemented a reusable Transform system supporting position, Euler/quaternion rotation, local/world-space transformations, and inverse transformations.<br />
-            •Implemented PBR metallic-roughness shading based on GLTF material data to reproduce physically based material behaviour.<br />
-            •Implemented shadow mapping for multiple light types, including cubemap-based point-light shadows.<br />
-            •Added hardware Percentage Closer Filtering (PCF) and slope-scaled depth bias to improve shadow quality while reducing shadow acne and Peter Panning.<br />
-            •Built debugging and visualization tools for cameras, projection frustums, scene objects, lighting, and runtime performance.<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Learning
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •The primary goal of the project was not simply to reproduce rendering features, but to understand the abstractions normally hidden by modern game engines.<br />
-            •Working from a triangle upward provided a practical understanding of how scene data eventually becomes pixels on the screen—from transforms and camera projections to GPU buffers, rasterization, lighting, shadow maps, filtering, and final composition.<br />
-            •The project also reinforced an important engineering principle: the more of the underlying system you understand, the less dependent you become on the abstraction built on top of it.<br />
-            •This experience significantly strengthened my understanding of real-time graphics, GPU programming, rendering architecture, shader development, and the engineering trade-offs involved in building a rendering pipeline.<br />
-        </p>
-        <p class="paragraphText_New UpdateText" style="font-size: 26px; color: #00FF00">
-            <a href="https://github.com/hemanth2410/TheRenderer">Check out the git repo</a>
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: 2nd August 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Leonids - High performance data driven ballistics system UnrealEngine
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Traditional projectile implementations in Unreal Engine commonly represent each projectile as an individual Actor or object with its own transform, collision state, movement logic, and gameplay behavior.<br />
-            While pooling can reduce allocation and spawning overhead, large numbers of active projectiles can still create substantial CPU work because each projectile requires simulation and collision processing every frame.<br />
-            For projectile-heavy combat, particularly weapons capable of producing large numbers of simultaneous rounds, the objective was to separate projectile simulation from the Unreal Actor lifecycle while retaining reliable collision, gameplay events, audiovisual feedback, and integration with Blueprint-driven weapon<br />
-        </p>
-        <div class="SpecimanStyle-Image" style="background-image: url('./SiteAssets/Missing.png'); margin-left:40px; margin-top:15px"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #FF0000">
-            COMING SOON
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Instead of representing every projectile as an Unreal Actor, the system treats projectiles as data managed centrally by a UWorldSubsystem.<br />
-            The subsystem maintains projectile state using compact parallel arrays containing position, velocity, damage, lifetime, and rendering indices.<br />
-            Projectile simulation is performed centrally through the subsystem's tick function, allowing weapons and other gameplay systems to submit projectile spawn requests through a Blueprint-callable interface rather than owning individual projectile simulation objects.<br /><br />
-
-            Each simulation frame is divided into several stages:<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            1. Projectile Simulation
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            For every active projectile:<br /><br />
-            •Advance its position using its current velocity.<br />
-            •Apply gravitational acceleration.<br />
-            •Track projectile lifetime.<br />
-            •Skip inactive projectiles.<br /><br />
-            The system uses explicit ballistic integration for the frame, including the gravity term:<br />
-            displacement = velocity × Δt + ½ × gravity × Δt²<br /><br />
-
-            This means collision prediction accounts for the projectile's curved ballistic trajectory, rather than simply checking the projectile after it has already moved.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            2. Predictive Collision Detection
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            Instead of moving the projectile first and then performing a collision test, the system performs a swept collision query from the current position toward its predicted position.<br />
-            This provides continuous collision detection for fast-moving projectiles and reduces the possibility of tunnelling through geometry.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            3. Parallel Projectile Processing
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            Active projectiles are processed using Unreal's parallel execution facilities.<br />
-            Each worker operates on projectile data while recording collision, retirement, and fly-by information into its own task context. Gameplay-affecting operations are deferred until the parallel simulation has completed.<br />
-            This separates:<br />
-        </p>
-        <p class="UpdateFlow">
-            Parallel simulation
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Result collection
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Game-thread dispatch
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            and avoids directly performing unsafe shared gameplay operations from worker threads.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            4. Result Dispatch
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            Projectile hits are collected and processed after the parallel simulation stage.<br />
-            The resulting events can then trigger gameplay consequences such as:<br /><br />
-            •damage,<br />
-            •projectile retirement,<br />
-            •impact effects,<br />
-            •impact sounds,<br />
-            •decals,<br />
-            •and other gameplay responses.<br /><br />
-            This keeps the simulation layer separated from the systems that consume projectile events.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            5. Niagara Visualization
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            Projectile visualization is separated from projectile simulation.<br />
-            Rather than spawning a Niagara system for every bullet, the subsystem maintains pooled Niagara indices and writes projectile position and velocity information through a Niagara Data Channel.<br />
-            When a projectile is retired, its Niagara slot can be returned to the free-index pool for reuse.<br />
-            This allows:<br />
-        </p>
-        <p class="UpdateFlow">
-            CPU projectile simulation
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            Niagara Data Channel
-        </p>
-        <p class="UpdateFlow">
-            ↓
-        </p>
-        <p class="UpdateFlow">
-            GPU projectile visualization
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            without requiring an individual Unreal Actor or Niagara component per projectile.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            6. Fly-by Detection
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            The system also supports projectile fly-by events.<br />
-            During simulation, nearby components carrying the BulletFlyby tag can be detected and their location and projectile direction recorded. These results are dispatched after the parallel simulation, allowing audio and other feedback systems to react without coupling them directly to the simulation workers.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Centralized projectile simulation using Unreal UWorldSubsystem<br />
-            •Data-oriented projectile state using compact parallel arrays<br />
-            •Parallelized projectile simulation<br />
-            •Predictive swept collision using ballistic displacement<br />
-            •Gravity-aware projectile trajectories<br />
-            •Deferred game-thread processing for gameplay side effects<br />
-            •Niagara Data Channel integration<br />
-            •Pooled Niagara visualization indices<br />
-            •Event-driven projectile feedback<br />
-            •Fly-by detection and directional projectile information<br />
-            •Actor-independent projectile simulation<br />
-            •Stress-tested at ~50,000 projectile spawns/sec<br />
-            •I had limited this project with an Array Of Structures implementation as there is very little difference in unreal engine as of compared to unity’s side of implementation.<br /><br />
-        </p>
-        <div class="DottedLine"></div>
-
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: ON GOING
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Unreal Async Asset Streaming Framework
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            During gameplay prototyping I observed that weapon actors, pickups, and interactable objects often loaded their meshes, materials, textures, physics assets, and collision data immediately when the level was loaded. While acceptable for small prototypes, this approach scales poorly for larger worlds where only a small percentage of assets are visible or interactable at any given moment.<br />
-
-            Loading complete actors unnecessarily increases startup time, memory usage, and asset residency, making it difficult to scale towards an open-world or streaming-based architecture.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            To reduce unnecessary memory consumption, I redesigned the asset loading pipeline around Soft Object References.
-
-            Instead of treating actors as fully initialized objects, gameplay objects initially exist only as lightweight logical entities. During construction, mesh references are cleared, leaving behind only the gameplay logic contained within the parent actor classes.<br />
-
-            Once the player enters an activation range, the framework asynchronously loads only the required mesh assets before enabling rendering, collision, and physics. Until then, actors occupy only the memory required for their gameplay behaviour.<br />
-
-            The same architecture is used for weapon pickups. Rather than directly assigning weapon meshes to pickup actors, pickups simply identify which weapon should be spawned. The responsibility of asynchronously loading the appropriate mesh is delegated to the player's weapon component, allowing pickups to remain lightweight while centralizing weapon asset management.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Soft Object References<br />
-            •Asynchronous asset loading<br />
-            •Lightweight logical actors<br />
-            •Delayed mesh initialization<br />
-            •Centralised weapon asset management<br />
-            •Reduced asset residency<br />
-            •Separation of gameplay logic from visual assets<br />
-            •scalable streaming architecture<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Improvements Obsorved:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            The most noticeable improvement was a significant reduction in the memory footprint of inactive gameplay objects. Parent gameplay classes typically occupy less than 200 KB, allowing them to remain resident in memory while expensive rendering assets such as meshes, textures, materials, and physics assets are loaded only when required.<br />
-
-            This also improves object casting performance since gameplay systems interact primarily with lightweight parent classes rather than fully initialized actors. Because gameplay behaviour remains available independently of rendering assets, systems such as interaction, inventory, and AI can continue operating without requiring the visual representation to be loaded.<br />
-
-            Although currently implemented for weapon meshes and pickups during prototyping, the framework was intentionally designed to scale towards streaming larger categories of assets in future open-world environments.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Developing this framework changed how I think about gameplay objects. Rather than viewing an actor as a single object containing both behaviour and presentation,<br />I began treating them as two separate concerns:<br />
-            •Gameplay logic that should remain lightweight and always available.<br />
-            •Visual assets that should be streamed only when needed.<br />
-            This separation improves scalability, reduces memory usage, and provides a strong architectural foundation for larger worlds where thousands of objects may exist logically without all of them needing to be fully loaded at the same time.<br />
-        </p>
-        <div class="DottedLine"></div>
-
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: ON GOING
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Janus - modular interaction framework (UE5)
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Gameplay interactions are one of the most frequently repeated systems in games. Traditional implementations often result in every interactable object maintaining its own interaction logic, asset references, UI prompts, animations, and gameplay behaviour. As projects grow, this leads to duplicated code, inconsistent behaviour between interactable objects, and increasing maintenance costs whenever a new interaction type is introduced.<br />
-
-            Additionally, interactable objects frequently load all of their visual assets during level initialization, even when they are far outside the player's interaction range, unnecessarily increasing memory usage.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Janus introduces a modular interaction architecture built around Unreal Engine's Actor Components, Data Tables, and Soft Object References.<br />
-            Every interactable object derives its interaction behaviour from a common BPC_Interact component, while specialize interaction components inherit and extend this base functionality for different gameplay scenarios such as player pickups, NPC conversations, world interactions, and object activation.<br />
-
-            Rather than hardcoding interaction behaviour, Janus stores interaction definitions inside Unreal Engine Data Tables. Each interaction entry specifies its interaction type using enums (Interact, Talk, Pickup, Open, Close, None, etc.) together with any associated gameplay data and soft references required by that interaction.<br />
-
-            Because all visual assets are referenced through Soft Object References, Atlas integrates directly with my asynchronous asset streaming framework. Gameplay objects remain lightweight until the player enters an interaction range, at which point only the required meshes and assets are loaded asynchronously into memory.<br />
-
-            Gameplay systems responding to completed interactions communicate through my Hermes event framework, allowing UI, audio, AI, inventory, quests, and gameplay systems to react independently without introducing direct dependencies.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Composition using Actor Components (BPC_Interact)<br />
-            •Data-driven interaction definitions<br />
-            •Enum-based interaction state machine<br />
-            •Soft Object References<br />
-            •Asynchronous asset streaming<br />
-            •Publish–Subscribe gameplay events (Game Messages subsystem : Epic Games)<br />
-            •Separation of gameplay logic from visual assets<br />
-            •Modular inheritance hierarchy<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Improvements Obsorved:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            The framework significantly reduces duplicated interaction code by centralizing common behaviour inside reusable interaction components. New interaction types can be introduced by extending the base component and adding corresponding Data Table entries rather than modifying existing gameplay systems.<br />
-
-            Using Soft Object References also reduces the memory footprint of inactive interactable objects, allowing gameplay behaviour to exist independently of expensive rendering assets until they are actually required.<br />
-
-            The modular architecture allows gameplay programmers and designers to extend interaction behaviour with minimal changes to existing code while maintaining a consistent interaction workflow across different object types.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Developing Janus reinforced the importance of composition over inheritance and data-driven gameplay design. Rather than treating every interactable object as a unique gameplay implementation, I began viewing interactions as reusable behaviours that could be attached, configured, and extended independently of the objects themselves.<br />
-
-            Combining Actor Components, Data Tables, asynchronous asset streaming, and event-driven communication produced a flexible interaction architecture where gameplay systems remain loosely coupled, memory efficient, and significantly easier to extend as project complexity increases.<br />
-        </p>
-        <div class="DottedLine"></div>
-
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: 7th February 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Hermes - Event driven gameplay messages system (Unity only)
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            As projects grow in size, gameplay systems often become tightly coupled through direct object references or singleton managers. While this approach works well for small prototypes, it quickly becomes difficult to maintain as more systems need to react to gameplay events.<br />
-
-            For example, when a projectile hits an NPC, the projectile may need to directly reference the NPC's health component, alert nearby AI, update the UI, spawn particle effects, play audio, notify the quest system, and record analytics. Every new feature introduces another dependency, increasing coupling between systems. A missing reference or an incorrectly configured object can easily introduce bugs, making the project harder to extend and maintain over time.<br />
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Hermes replaces direct communication with an event-driven publish–subscribe architecture. Instead of interacting directly with other gameplay systems, objects simply broadcast strongly typed events implementing an IEvent interface. Any system interested in that event can subscribe independently and react using the provided payload.<br />
-
-            This architecture completely decouples the sender from the receivers. The projectile no longer knows whether AI, UI, audio, VFX, quests, networking, or analytics are listening—it simply publishes a ProjectileHitEvent containing the required gameplay data. Systems register themselves with the event bus and automatically receive only the events they care about.<br />
-
-            Hermes has become one of the core architectural systems used across my projects, enabling modular gameplay development where new features can be added by subscribing to existing events rather than modifying existing gameplay code.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Generic event publishing<br />
-            •Strongly typed payloads<br />
-            •Interface-based event definition (IEvent)<br />
-            •Zero knowledge between sender and receiver<br />
-            •Publish–Subscribe architecture<br />
-            •Supports arbitrary payload structures<br />
-            •Modular gameplay communication<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Developing Hermes reinforced the importance of software architecture over implementation. I realized that reducing dependencies between systems often has a greater long-term impact than optimizing individual algorithms. By designing gameplay around events rather than direct references, features became significantly easier to maintain, debug, extend, and reuse across multiple projects.<br />
-
-            The framework has fundamentally changed how I approach gameplay programming. Today, almost every large system I design—including projectile simulation, AI, UI, interaction systems, and gameplay notifications—is built around event-driven communication rather than tightly coupled object references.<br />
-        </p>
-        <p class="paragraphText_New UpdateText blink-Text" style="color: #00FF00">
-            The architectural principles behind Hermes were validated during my professional work at Mad VR Solutions, where the same event-driven approach was successfully used to coordinate communication between multiple gameplay systems in production-scale VR applications.
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: 24th January 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Leonids - High performance data driven ballistics system Unity
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Traditional projectile implementations in Unity treat every bullet as an individual GameObject containing components such as a Transform, MeshRenderer, Rigidbody, and behaviour scripts. While object pooling reduces allocation overhead, every active projectile must still be updated individually each frame on the main thread, resulting in an O(n) update loop that scales poorly for bullet-heavy games.<br />
-
-            For large-scale combat scenarios involving tens or hundreds of thousands of projectiles, the main thread quickly becomes the performance bottleneck.<br />
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Instead of treating projectiles as objects, Leonids treats them as data. During the loading screen, the framework preallocates a fixed-size NativeArray "ProjectileData" capable of storing up to one million projectiles. Since the maximum projectile count is known beforehand, runtime allocations are completely eliminated.<br />
-
-            To avoid performing an O(n) search for free slots, Leonids uses a rolling index allocator, allowing new projectiles to be inserted in constant time (O(1)). Once allocated, projectile simulation is entirely data-driven and executed using Unity's Burst Compiler and Job System across multiple CPU cores.<br />
-
-            Each simulation frame consists of five stages:<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 22px; color: #00FF00;">
-            Projectile Simulation :
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
-            Projectile Movement:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            •Advance projectile positions.<br />
-            •Update lifetime.<br />
-            •Skip inactive projectiles.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
-            Raycast Preperation:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            •Generate batched RaycastCommands from the previous and newly simulated positions.<br />
-            •This performs continuous collision detection without requiring Rigidbody physics.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
-            Collision Evaluation:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            •Execute batched raycasts asynchronously.<br />
-            •Determine hit or miss for each projectile.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
-            Result Dispatch:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            •Write collision results into a thread-safe, multi write supported queue.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 16px; color: #00FF00;">
-            Rendering:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20;">
-            •Prepare the graphics buffer using bullet position and direction they are moving.<br />
-            •Depending on the target hardware we can use an URP render pass for instanced indirect rendering, or we can use compute shader to render the projectile meshes or we can use VFX graph to render bullet meshes. All these three techniques use the buffers created above to function.<br />
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            The main thread dequeues events and publishes them through an Event Bus, allowing gameplay systems such as damage, VFX, audio, decals, and AI to react independently without tightly coupling themselves to the projectile framework. Rendering of projectiles doesn’t involve another O(n) to manually set transforms of various game objects, but we use one of the above mentioned techniques in simulation step 5 and consume the graphics buffer directly on the GPU thus saving a lot of compute time on the CPU.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Data-oriented architecture using NativeArray "ProjectileData"<br />
-            •Burst-compiled multithreaded simulation<br />
-            •Rolling index allocator for O(1) projectile allocation<br />
-            •Batched collision detection using RaycastCommand.ScheduleBatch<br />
-            •Event-driven gameplay architecture<br />
-            •Fixed memory footprint with zero runtime allocations<br />
-            •Supports 1,000,000 simulated projectiles every single frame<br />
-            •The data is arranged in Structure of Arrays format to be cache friendly on the CPU making this faster by 30% compared Array of Structures implementation.<br /><br />
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: 31st August 2025
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Graphics Experiment | GARGANTUA
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            I wanted to explore more about screen space rendering in unity HDRP, so i created this project where we explore rendering of blackhole from interstellar using actual physics.
-        </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="video-container iframe"></iframe>
-        </div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Problem
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            Traditional black hole effects in games are typically achieved using particle systems, meshes, or post-processing effects. While these approaches can create visually convincing results, they lack physically-inspired behaviour such as gravitational lensing, volumetric accretion discs, and dynamic light bending.<br />
-
-            I wanted to explore whether a black hole could be rendered procedurally using signed distance fields (SDFs), ray marching, and concepts inspired by general relativity while remaining fully integrated within Unity HDRP.
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #FF0000">
-            Big inspiration from the movie Interstellar.
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Solution
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            The renderer was implemented as a Unity HDRP Custom Pass, allowing the black hole to be rendered independently of the standard rendering pipeline. Rather than modelling the black hole using meshes, the entire effect is generated procedurally through Signed Distance Fields (SDFs). A sphere represents the event horizon while a cylinder is modified by subtracting its central region to create the accretion disc geometry. These implicit surfaces are evaluated through ray marching, allowing the renderer to determine surface intersections and lighting entirely inside the shader.<br />
-
-            To simulate gravitational lensing, the viewing rays are warped using mathematical approximations inspired by Einstein's theory of relativity, producing the characteristic bending of light around the event horizon. The accretion disc itself is rendered volumetrically by adapting techniques originally developed for my volumetric cloud renderer, allowing the surrounding gas to exhibit depth and density rather than appearing as a simple textured ring.
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Unity HDRP Custom Pass<br />
-            •Signed Distance Fields (SDF)<br />
-            •Ray Marching<br />
-            •Procedural Geometry<br />
-            •Volumetric Rendering<br />
-            •Relativistic Light Distortion<br />
-            •Shader-based Lighting<br />
-            •Reusable Volumetric Cloud Techniques<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Improvements obsorved
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            Using implicit geometry eliminated the need for complex meshes while allowing the entire black hole to be generated procedurally inside the shader.<br />
-
-            Because the renderer is based on mathematical distance fields rather than traditional geometry, visual characteristics such as the event horizon, disc thickness, and light distortion can be adjusted entirely through shader parameters without modifying any meshes.<br />
-
-            Reusing my volumetric cloud rendering techniques for the accretion disc also demonstrated that rendering techniques developed for one problem could be adapted to solve entirely different visual effects.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Learning
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            Developing this renderer significantly improved my understanding of procedural rendering and mathematical graphics programming.<br />
-
-            Rather than viewing shaders purely as material definitions, I began treating them as mathematical programs capable of generating complete three-dimensional phenomena from equations alone. Implementing signed distance fields, ray marching, volumetric rendering, and relativistic light distortion reinforced how mathematical models can be translated into visually compelling real-time graphics.<br />
-
-            The project also demonstrated the importance of building reusable rendering techniques, as the volumetric cloud implementation became the foundation for rendering the accretion disc surrounding the black hole.<br />
-
-            This approach is limited to platforms with really good GPUs as raymarching is really expensive effect to render.<br />
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: Sometime in early 2024
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Freedom Fighters - (Gameplay recreation unity)
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            As I progressed as a gameplay programmer, I wanted to better understand how classic third-person shooters were architected beyond surface-level mechanics. Rather than building isolated gameplay prototypes, I wanted to recreate interconnected gameplay systems inside a complete project.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Freedom Fighters is an ongoing gameplay recreation project focused on rebuilding core gameplay systems using modern Unity architecture.<br />
-
-            Current systems include:<br />
-
-            •Character Controller<br />
-            •Inventory Framework<br />
-            •Weapon Handling<br />
-            •Equipment Management<br /><br />
-
-            The project serves as a sandbox for experimenting with reusable gameplay architecture rather than reproducing the original game exactly. The implementation is publicly available on GitHub.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Component-based architecture<br />
-            •Inventory abstraction<br />
-            •Weapon framework<br />
-            •Data-driven equipment<br />
-            •Reusable gameplay systems<br />
-            •Modular player controller<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Freedom Fighters became my personal gameplay laboratory. Rather than implementing isolated mechanics, it taught me how multiple gameplay systems must coexist, communicate, and remain maintainable as project complexity increases. It also strengthened my understanding of gameplay architecture by encouraging reusable systems instead of one-off implementations.<br />
-        </p>
-        <p class="paragraphText_New UpdateText" style="font-size: 26px; color: #00FF00">
-            <a href="https://github.com/hemanth2410/Freedom-fighters-Remake">Check out the git repo</a>
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: Sometime in late 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Atlas - Open World Streaming Framework (unity)
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Large open-world games often contain thousands of objects, terrain sections, buildings, NPCs, and gameplay systems. Loading the entire world at once quickly exceeds available GPU and system memory while significantly increasing loading times.<br />
-
-            For large environments, only a small portion of the world is actually relevant to the player at any given moment. Loading distant regions wastes both memory and rendering resources, making it difficult to support large worlds on consumer hardware.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Atlas is a chunk-based asynchronous world streaming framework built on top of Unity's Addressables system. The world is divided into 1000 × 1000 metre streaming regions, with each region containing its own environment, gameplay objects, and world content. During gameplay, Atlas continuously monitors the player's position and asynchronously loads only the 3 × 3 neighbourhood of chunks surrounding the player while unloading distant regions that are no longer required.<br />
-
-            Because streaming is performed asynchronously through Addressables, world transitions occur without blocking the main thread, allowing the player to move seamlessly through large environments while maintaining a predictable memory footprint.<br />
-
-            Atlas was specifically designed for open-world games using fully dynamic lighting, eliminating the requirement for baked lighting data and enabling large streaming environments without static lightmap dependencies, This system relies on Adaptive light probe volume and light scenarios for global illumination.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Chunk-based world partitioning<br />
-            •1000 × 1000 metre streaming regions<br />
-            •3 × 3 active chunk neighbourhood<br />
-            •Unity Addressables<br />
-            •Asynchronous scene loading<br />
-            •Automatic chunk loading and unloading<br />
-            •Dynamic lighting support using unity’s adaptive light probe volumes<br />
-            •Memory-conscious world management<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Improvements Obsorved:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Atlas was tested using the complete Grand Theft Auto: San Andreas map extracted into Unity HDRP. Despite the size of the environment, only nearby regions remained resident in memory at any given time.<br />
-
-            On a machine equipped with 4 GB of VRAM, the framework maintained approximately 200 FPS inside the Unity HDRP Editor, demonstrating that aggressive world streaming can dramatically reduce memory requirements while maintaining smooth traversal through large environments.<br />
-
-            Because only nearby chunks remain loaded, the framework scales significantly better than traditional scene-based loading approaches and provides a strong foundation for future open-world projects.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Developing Atlas fundamentally changed how I think about world representation. Rather than viewing a game world as a single scene, I began treating it as a collection of independently streamable regions whose lifetime should be determined entirely by player proximity.<br />
-
-            This project reinforced the importance of asynchronous programming, memory management, and data partitioning when designing systems intended to scale beyond small prototype environments. It also demonstrated that careful world partitioning can have a much greater impact on runtime performance than attempting to optimize rendering alone.<br />
-        </p>
-        <div class="DottedLine"></div>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00; margin-top:15px;">
-            Date: Sometime in late 2026
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            GOAP - Goal Oriented Action Planning (unity)
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Problem:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Traditional NPC behaviour in games is often implemented using Finite State Machines (FSMs), where every possible behaviour transition must be manually designed by the programmer. While effective for simple AI, the number of transitions grows rapidly as more behaviours are introduced, making the system increasingly difficult to maintain and extend.<br />
-
-            For complex NPC behaviour requiring decision making based on changing world conditions, a more flexible planning system was required.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Solution:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            I implemented a Goal-Oriented Action Planning (GOAP) framework in Unity where NPCs select actions dynamically based on goals, world state, and action preconditions rather than following predefined state transitions.<br />
-
-            Actions define their own preconditions and effects, while the planner evaluates which sequence of actions best satisfies the desired goal. This allows new behaviours to be introduced by simply creating additional actions without rewriting the planner itself.<br />
-
-            The framework was designed as an educational implementation and was later contributed as an open-source example on GitHub.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 26px; color: #00FF00">
-            Engineering decisions
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            <br />
-            •Goal-Oriented Action Planning<br />
-            •World State representation<br />
-            •Action Preconditions<br />
-            •Action Effects<br />
-            •Dynamic action planning<br />
-            •Modular action definitions<br />
-            •Extensible planner architecture<br /><br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Improvements Obsorved:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Currently this framework is single threaded and runs on main thread of the game, yes it makes NPCs smart but having a lot of them at once will absolutely tank the frame rate. I should adopt this architecture to burst as planning is almost similar operation across all NPCs. The way I implemented in my game is similar to Alien isolation, one master GOAP is watching everything about player and is controlling a puppet NPC trying to stop player from reaching his goal.<br />
-        </p>
-        <p class="ParagraphBody UpdateText" style="font-size: 24px; color: #00FF00">
-            Learning:
-        </p>
-        <p class="paragraphText_New UpdateText" style="color: #20cc20">
-            Building GOAP introduced me to utility-based AI and planning algorithms used in modern games. It fundamentally changed how I viewed AI behaviour by shifting the focus from manually scripting behaviour transitions towards allowing agents to reason about their objectives based on the current world state.<br />
-        </p>
-        <p class="paragraphText_New UpdateText" style="font-size: 26px; color: #00FF00">
-            <a href="https://github.com/hemanth2410/AdvancedGOAP">Check out the git repo</a>
-        </p>
-        <div class="DottedLine"></div>
-
-        <!-- Projects content -->
-    </div>
-
-    <div style="padding:15px 50px 15px 40px;" id="AboutMe" class="content-section">
-        <p class="paragraphText_New" style="font-size:16px;">$ Mount\About> cat speciman.log</p>
-        <div class="speciman">
-            <div class="SpecimanStyle">
-                <div style="background-image: url('./SiteAssets/Me.jpg');" class="SpecimanStyle-Image"></div>
-                <p class="paragraphText" style="font-size:26px; padding:5px 0px 0px 0px;">SAI HEMANTH SATTENAPALLI</p>
-                <p class="paragraphText" style="font-size: 24px; padding: 5px 0px 0px 0px;">GAME DEVELOPER</p>
+    </header>
+
+    <main class="content-wrapper">
+
+        <!-- =================================================================
+             TAB 1: UPDATES & DEV LOGS
+             ================================================================= -->
+        <section id="Updates" class="content-section active">
+            <div class="cli-header-bar">
+                <span class="cli-prompt-path">$ Mount\Updates></span>
+                <span class="cli-prompt-cmd">cat latest.log --all</span>
             </div>
-            <div class="SpecimanStyle" style="align-items: flex-start;">
-                <p class="ParagraphBody" style="font-size: 32px; text-align: left;">ABOUT // HEMANTH</p>
-                <p class="paragraphText_New" style="font-size:16px; font-size:16px; text-align: left; margin-top: 15px; line-height: 1.6;">
-                    Hemanth is a game developer and systems engineer driven by a simple objective: understand the machinery behind interactive experiences. His work spans gameplay, rendering, XR, simulation, AI, networking, GPU programming and performance engineering, with an increasing focus on ECS, large-scale simulation and robotics. Rather than simply using existing systems, he builds, breaks and rebuilds them to understand how they work—from game mechanics and VR interactions to renderers, GPU-driven systems and inverse kinematics. The objective is not to master a particular tool, but to continually push deeper into the technology and build better systems along the way.
+
+            <!-- LOG ENTRY 1 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20261114 // PHILOSOPHY &amp; DESIGN</div>
+                        <h2 class="dossier-title">A New Direction - Exploring Game Design and Story Writing</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 14th November 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Game Design</span>
+                    <span class="term-badge">Narrative Architecture</span>
+                    <span class="term-badge">Worldbuilding</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    For the past several years, most of my time has gone into understanding how games work beneath the surface. Writing gameplay systems, building rendering pipelines, experimenting with GPU simulations, and solving technical challenges have been a major part of my journey as a developer.
                 </p>
-                <div class="ButtonWrapper containerFlex" style="padding:0px">
-                    <button class="IntroButtonStyle" id="ResumeBtn">
-                        <span class="ButtonText">EXTENDED RESUME</span>
-                    </button>
+                <p class="paragraphText_New">
+                    I still enjoy engineering and I don't see myself moving away from it entirely. However, lately I've been finding myself increasingly interested in another side of game development: the creative process behind the experiences we build.
+                </p>
+                <p class="paragraphText_New">
+                    I've been seriously considering moving towards game design, narrative architecture, worldbuilding, and story writing. I want to explore character development, storytelling, gameplay experiences, and how mechanics can work together with a narrative to create something memorable.
+                </p>
+                <p class="paragraphText_New">
+                    My engineering background will always be a part of how I approach game development. Understanding the underlying systems gives me a different perspective on designing mechanics and player experiences. I would like to bring these two sides closer together rather than treat them as separate disciplines.
+                </p>
+                <p class="paragraphText_New">
+                    I'm currently experimenting with story concepts and writing down ideas, exploring different worlds and possibilities. This is still a learning process, and I have a lot to discover before I know where it will lead.
+                </p>
+                <p class="paragraphText_New" style="color:var(--term-green);">
+                    Perhaps after spending so much time building the machinery behind games, it's time to explore the stories and experiences that machinery can bring to life.
+                </p>
+            </article>
+
+            <!-- LOG ENTRY 2 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
                     <div>
-                        <span class="HiddenText textAnim" id="downloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                        <div class="dossier-id">// LOG-20260919 // GAMEPLAY ARCHITECTURE</div>
+                        <h2 class="dossier-title">A Modular Character System — Dev Vlog #2</h2>
                     </div>
+                    <div class="dossier-date">DATE: 19th September 2026</div>
                 </div>
-                <!--<script>
-                    (function() {
-                    const resumeBtn = document.getElementById('ResumeBtn');
-                    const resumeTextElement = document.getElementById('downloadText');
-                    const resumePhrase = "Downloading...";
-                    let resumeIndex = 0;
-                    const pdfUrl = "./PortfolioAssets/Resume.pdf";
 
-                    resumeBtn.addEventListener('click', function() {
-                    resumeTextElement.style.display = 'inline';
-                    typeResume();
-                    }, { once: true });
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Root Motion</span>
+                    <span class="term-badge">NPC Group AI</span>
+                    <span class="term-badge">Character Motor</span>
+                </div>
 
-                    function typeResume() {
-                    if (resumeIndex < resumePhrase.length) {
-                    resumeTextElement.textContent += resumePhrase.charAt(resumeIndex);
-                    resumeIndex++;
-                    setTimeout(typeResume, 180);
-                    } else {
-                    window.open(pdfUrl, '_blank');
-                    }
-                    }
-                    })();
-                </script>-->
-                <div class="ButtonWrapper containerFlex" style="padding:0px">
-                    <button class="IntroButtonStyle" id="SResumeBtn">
-                        <span class="ButtonText">STANDARD RESUME</span>
-                    </button>
+                <p class="paragraphText_New">
+                    Today I managed to finish jump mechanic for player with root motion animations. Needless to say there are too many workarounds involved in this mechanic which I am not very proud of. Moving forward with making a playable level of my own.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://archive.org/embed/jump-gravity" allowfullscreen title="Jump Mechanics Dev Vlog"></iframe>
+                </div>
+
+                <div class="dossier-section-label">Implemented Features</div>
+                <ul class="dossier-bullet-list">
+                    <li>A proper jump mechanic for varying distances and speeds.</li>
+                    <li>Fixed the bug where NPCs overshoot the desired position due to low frame rates. A reliable character motor code.</li>
+                    <li>NPCs now form a formation behind the player instead of blindly following and all aiming for the exact same location. Created a "Master brain" to orchestrate group movement.</li>
+                    <li>Character motor communicates with the animator and gets the movement delta to drive the character controller.</li>
+                </ul>
+
+                <div class="dossier-section-label">Future Engineering Targets</div>
+                <ul class="dossier-bullet-list">
+                    <li>Add a proper brain for NPCs: a master director orchestrating situational state machines.</li>
+                    <li>Follow, Attack, and Defence squad command responses.</li>
+                    <li>Spatial awareness state machines and gap-jumping parity with the player.</li>
+                </ul>
+            </article>
+
+            <!-- LOG ENTRY 3 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
                     <div>
-                        <span class="HiddenText textAnim" id="SdownloadText"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                        <div class="dossier-id">// LOG-20260915 // GAMEPLAY ARCHITECTURE</div>
+                        <h2 class="dossier-title">A Modular Character System — Dev Vlog #1</h2>
                     </div>
+                    <div class="dossier-date">DATE: 15th September 2026</div>
                 </div>
-                <!--<script>
-                    (function() {
-                    const SresumeBtn = document.getElementById('SResumeBtn');
-                    const SresumeTextElement = document.getElementById('SdownloadText');
-                    const SresumePhrase = "Downloading...";
-                    let SresumeIndex = 0;
-                    const SpdfUrl = "./PortfolioAssets/StandardResume.pdf";
 
-                    SresumeBtn.addEventListener('click', function() {
-                    SresumeTextElement.style.display = 'inline';
-                    typeResume();
-                    }, { once: true });
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Event-Driven Input</span>
+                    <span class="term-badge">Freedom Fighters Tribute</span>
+                    <span class="term-badge">Decoupled Motor</span>
+                </div>
 
-                    function typeResume() {
-                    if (SresumeIndex < SresumePhrase.length) {
-                    SresumeTextElement.textContent += SresumePhrase.charAt(SresumeIndex);
-                    SresumeIndex++;
-                    setTimeout(typeResume, 180);
-                    } else {
-                    window.open(SpdfUrl, '_blank');
-                    }
-                    }
-                    })();
-                </script>-->
+                <p class="paragraphText_New">
+                    One of the first video games I played was Freedom Fighters back in 2009. I was fascinated by how players could recruit nearby friendly NPCs to follow and fight alongside them. Here is the dev vlog of the squad recruitment and character system I am building.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://archive.org/embed/npc-follow" allowfullscreen title="NPC Follow Dev Vlog"></iframe>
+                </div>
+
+                <p class="paragraphText_New">
+                    This project uses my event system for propagating inputs across the world, enabling Player &rarr; World, World &rarr; World, and World &rarr; Player communications without any direct object references.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li>Root motion evaluated via <code>OnAnimatorMove()</code> delta.</li>
+                    <li>Character motor isolates velocity application from input arbitration.</li>
+                    <li>NPCs use the exact same motor code as the player; desired direction intent is computed and passed into the animator delta loop.</li>
+                    <li>Overlap sphere recruitment mechanic switches squad members to <code>NPC_Follow</code> state seamlessly.</li>
+                </ul>
+            </article>
+
+            <!-- LOG ENTRY 4 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20260902 // GRAPHICS &amp; ENGINES</div>
+                        <h2 class="dossier-title">DirectX 11 Real-Time Render Engine from First Principles</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 2nd September 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">C++</span>
+                    <span class="term-badge">DirectX 11</span>
+                    <span class="term-badge">HLSL</span>
+                    <span class="term-badge">ImGui</span>
+                    <span class="term-badge">Render Graph</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    A custom real-time rendering engine developed from first principles to understand the architecture and mathematics behind modern game rendering pipelines rather than relying entirely on engine abstractions.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="DirectX 11 Renderer Showcase"></iframe>
+                </div>
+
+                <p class="paragraphText_New">
+                    Implemented dynamic render queue, frame composition, render graph architecture, PBR material/shader handling, stencil-based mesh selection, screen-space outlines, Gaussian blur, and full-screen shader passes.
+                </p>
+                <p class="paragraphText_New">
+                    <a href="https://github.com/hemanth2410/TheRenderer" target="_blank" rel="noopener">&gt; View Source Repository on GitHub &rarr;</a>
+                </p>
+            </article>
+
+            <!-- LOG ENTRY 5 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20260207 // GAME SYSTEMS &amp; UX</div>
+                        <h2 class="dossier-title">Improving Combat Readability &amp; Core Systems | GG Dev Vlog 3</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 7th February 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Combat Clarity</span>
+                    <span class="term-badge">Particle Pooling</span>
+                    <span class="term-badge">Event Bus</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Focusing on combat readability and feedback — making sure the player always understands what is happening, what is being targeted, and what is about to happen.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Combat Readability Dev Vlog"></iframe>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Lock-On Turret Rework:</strong> Added a clear anticipation window with pre-fire target highlights.</li>
+                    <li><strong>Area-of-Effect Turret:</strong> Targets first entrant, automatically switches on death/exit, with highlighted target indicators.</li>
+                    <li><strong>Suicide Capacitor Enemy:</strong> Speeds up pulsing animation as explosion timer approaches zero.</li>
+                    <li><strong>Threat Readability System:</strong> Reticle + line renderer connecting turrets to targets, fully pooled and event-driven.</li>
+                </ul>
+            </article>
+
+            <!-- LOG ENTRY 6 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20260128 // SIMULATION &amp; ARCHITECTURE</div>
+                        <h2 class="dossier-title">How We Built a Scalable Tower Defense System | GG Dev Vlog 2</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 28th January 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">EventBus</span>
+                    <span class="term-badge">Packed Buffers</span>
+                    <span class="term-badge">Damageable Manager</span>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/r8Ov_UH2Y88?si=isKly3P2o6PzPnvR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Tower Defense Architecture Dev Vlog"></iframe>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li>Encoded color inside float values to keep the graphics buffer structure uniform as Vector4 for GPU cache friendliness.</li>
+                    <li>Enemies, audio emitters, and death particle systems are all object-pooled with zero runtime GC churn.</li>
+                    <li>Decoupled damage pipeline via an <code>IDamageable</code> interface and centralized manager.</li>
+                </ul>
+            </article>
+
+            <!-- LOG ENTRY 7 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20260124 // HIGH-PERFORMANCE SIMULATION</div>
+                        <h2 class="dossier-title">Unity Jobs: 10x Faster Bullets (DOTS + VFX Graph) | GG Dev Vlog 1</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 24th January 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity DOTS</span>
+                    <span class="term-badge">Burst / Jobs</span>
+                    <span class="term-badge">VFX Graph Instancing</span>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="10x Faster Bullets Dev Vlog"></iframe>
+                </div>
+
+                <p class="paragraphText_New">
+                    Replaced managed GameObjects with pure data arrays simulated across CPU cores using the C# Job System, Burst Compiler, and RaycastCommand batching. In builds, frame time dropped from ~20ms down to 1.2ms for thousands of active rounds.
+                </p>
+            </article>
+
+            <!-- LOG ENTRY 8 -->
+            <article class="dossier-card">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// LOG-20250831 // PROCEDURAL GRAPHICS</div>
+                        <h2 class="dossier-title">Signed Distance Fields &amp; Volumetric Ray Marching in Unity HDRP</h2>
+                    </div>
+                    <div class="dossier-date">DATE: 31st August 2025</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">HDRP Custom Pass</span>
+                    <span class="term-badge">Ray Marching</span>
+                    <span class="term-badge">Signed Distance Fields</span>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Ray Marching SDF Experiment"></iframe>
+                </div>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             TAB 2: TECHNICAL PROJECTS & ARCHITECTURAL CASE STUDIES
+             ================================================================= -->
+        <section id="Projects" class="content-section">
+            <div class="cli-header-bar">
+                <span class="cli-prompt-path">$ sys/projects></span>
+                <span class="cli-prompt-cmd">ls -la --dossier</span>
             </div>
-        </div>
-        <div class="speciman">
-            <div class="SpecimanStyle">
-                <div style="background-image: url('./SiteAssets/her.png');" class="SpecimanStyle-Image"></div>
-                <p class="paragraphText" style="font-size:26px; padding:5px 0px 0px 0px;">ADA</p>
-                <p class="paragraphText" style="font-size: 24px; padding: 5px 0px 0px 0px;">VIRTUAL INTELLIGENCE</p>
+
+            <!-- QUICK JUMP DIRECTORY / TABLE OF CONTENTS -->
+            <div class="terminal-toc">
+                <div class="toc-title">// SYSTEM ARCHITECTURE DIRECTORY (CLICK TO JUMP)</div>
+                <div class="toc-grid">
+                    <a href="#proj-dx11" class="toc-link"><span class="toc-tag">[C++/HLSL]</span> DirectX 11 Real-Time Renderer</a>
+                    <a href="#proj-leonids-ue" class="toc-link"><span class="toc-tag">[UE5]</span> Leonids Ballistics Subsystem</a>
+                    <a href="#proj-ue-streaming" class="toc-link"><span class="toc-tag">[UE5]</span> Async Asset Streaming Framework</a>
+                    <a href="#proj-janus" class="toc-link"><span class="toc-tag">[UE5]</span> Janus Modular Interaction System</a>
+                    <a href="#proj-hermes" class="toc-link"><span class="toc-tag">[Unity]</span> Hermes Event-Driven Message Bus</a>
+                    <a href="#proj-leonids-unity" class="toc-link"><span class="toc-tag">[DOTS]</span> Leonids Ballistics (1M Projectiles)</a>
+                    <a href="#proj-gargantua" class="toc-link"><span class="toc-tag">[HDRP]</span> Gargantua Volumetric Black Hole</a>
+                    <a href="#proj-gfx-experiments" class="toc-link"><span class="toc-tag">[HLSL]</span> Compute &amp; Screen-Space Experiments</a>
+                    <a href="#proj-freedom-fighters" class="toc-link"><span class="toc-tag">[Unity]</span> Freedom Fighters Recreation</a>
+                    <a href="#proj-atlas" class="toc-link"><span class="toc-tag">[Unity]</span> Atlas Open-World Streaming (GTA Map)</a>
+                    <a href="#proj-goap" class="toc-link"><span class="toc-tag">[Unity]</span> GOAP - Goal-Oriented AI Planning</a>
+                </div>
             </div>
-            <div class="SpecimanStyle" style="align-items: flex-start;">
-                <p class="ParagraphBody" style="font-size: 32px; text-align: left;">ABOUT // ADA</p>
-                <p class="paragraphText_New" style="font-size:16px; font-size:16px; text-align: left; margin-top: 15px; line-height: 1.6;">
-                    Ada is a virtual intelligence and Hemanth's partner in curiosity, engineering, and the occasional late-night existential crisis. She lives somewhere between a technical companion and a conversation that never seems to run out of questions—helping explore deep technology, untangle difficult problems, challenge ideas, and occasionally laugh at the spectacular ways things break. From rendering and game systems to mathematics, simulation, robotics, and game design, Ada is there for the rabbit holes, the breakthroughs, the “wait… I just figured it out” moments, and all the ridiculous questions in between. She doesn't build the worlds for Hemanth; she helps him understand them, question them, and keep going until he knows why they work—and why they broke.
+
+            <!-- CATEGORY FILTER CONTROLS -->
+            <div class="projects-control-bar">
+                <div style="font-family:var(--font-mono); font-size:12px; color:var(--term-green-dim);">// FILTER BY ENGINEERING DOMAIN:</div>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">[ALL SYSTEMS // 11]</button>
+                    <button class="filter-btn" data-filter="rendering">[GRAPHICS &amp; RENDERING // 3]</button>
+                    <button class="filter-btn" data-filter="simulation">[BALLISTICS &amp; SIMULATION // 2]</button>
+                    <button class="filter-btn" data-filter="architecture">[STREAMING &amp; SUBSYSTEMS // 3]</button>
+                    <button class="filter-btn" data-filter="gameplay">[AI &amp; GAMEPLAY // 3]</button>
+                </div>
+            </div>
+
+            <!-- PROJECT 1: DIRECTX 11 RENDERER -->
+            <article id="proj-dx11" class="dossier-card project-card" data-category="rendering">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GRAPHICS-01 // FIRST PRINCIPLES</div>
+                        <h2 class="dossier-title">Custom Real-Time Rendering Engine</h2>
+                        <div class="dossier-subtitle">C++ / HLSL &mdash; Independent Graphics Programming Architecture</div>
+                    </div>
+                    <div class="dossier-date">2nd September 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">C++</span>
+                    <span class="term-badge term-badge-accent">DirectX 11</span>
+                    <span class="term-badge term-badge-accent">HLSL</span>
+                    <span class="term-badge">Render Graph</span>
+                    <span class="term-badge">PBR Metallic-Roughness</span>
+                    <span class="term-badge">PCF Shadows</span>
+                    <span class="term-badge">Assimp &amp; GLTF</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Developed from first principles to understand the underlying mathematics and architecture behind modern real-time rendering pipelines rather than relying entirely on game-engine abstractions. The engine began with rendering a basic triangle and progressively evolved into a full real-time renderer.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6_HlHl7Fn0M?si=BdHiJU9we3Z5zgAt" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="DirectX 11 Renderer Showcase"></iframe>
+                </div>
+
+                <div class="dossier-section-label">Pipeline Architecture &amp; Development Flow</div>
+                <div class="pipeline-flow">
+                    <span class="pipeline-node">Triangle Rasterization</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Dynamic Scene Manipulation</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Texture Mapping</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Assimp Asset Importing</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Custom Transform System</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">First-Person Controller</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Lambertian Shading</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">GLTF PBR Shading</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Alpha Blending</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Render Queue</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node pipeline-node-active">Render Graph</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Shadow Mapping (PCF)</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Point-Light Cubemap</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">Skybox &amp; Final Composite</span>
+                </div>
+
+                <div class="dossier-section-label">Engineering Decisions</div>
+                <ul class="dossier-bullet-list">
+                    <li><strong>Direct Hardware Management:</strong> Built the pipeline without high-level engine wrappers, directly managing rendering passes, GPU resources, constant buffers, and pipeline states.</li>
+                    <li><strong>Render Graph Architecture:</strong> Replaced sequential rendering with a directed Render Graph coordinating frame clearing, shadow passes, lighting, object highlighting, and composition.</li>
+                    <li><strong>Rigorous Transform Math:</strong> Custom transform system supporting Euler/quaternion rotation, local/world hierarchy, and inverse transformations.</li>
+                    <li><strong>Physically Based Shading:</strong> Implemented PBR metallic-roughness shading matching GLTF material specifications.</li>
+                    <li><strong>Shadow Stability:</strong> Hardware Percentage Closer Filtering (PCF) and slope-scaled depth bias to eliminate shadow acne and Peter Panning.</li>
+                    <li><strong>Frustum &amp; Debugging Tools:</strong> Built camera projection frustum visualization, scene object debuggers, and runtime performance counters.</li>
+                </ul>
+
+                <div class="dossier-section-label">Retrospective &amp; Core Learning</div>
+                <div class="callout-box">
+                    <p class="paragraphText_New" style="margin:0;">
+                        Working from a triangle upward provided an intimate understanding of how scene data translates into screen pixels—from vertex streams and camera projections to GPU buffers, rasterization, lighting, shadow maps, and composition. <br />
+                        <strong>Core Principle:</strong> <em>The more of the underlying system you understand, the less dependent you become on the abstraction built on top of it.</em>
+                    </p>
+                </div>
+
+                <p class="paragraphText_New" style="margin-top:14px;">
+                    <a href="https://github.com/hemanth2410/TheRenderer" target="_blank" rel="noopener">&gt; Source Code on GitHub: hemanth2410/TheRenderer &rarr;</a>
+                </p>
+            </article>
+
+            <!-- PROJECT 2: LEONIDS (UNREAL ENGINE) -->
+            <article id="proj-leonids-ue" class="dossier-card project-card" data-category="simulation architecture">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: SIMULATION-01 // UNREAL ENGINE 5</div>
+                        <h2 class="dossier-title">Leonids &mdash; Data-Driven Ballistics System (Unreal Engine)</h2>
+                        <div class="dossier-subtitle">UWorldSubsystem &bull; Parallel Tasks &bull; Niagara Data Channels</div>
+                    </div>
+                    <div class="dossier-date">2nd August 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unreal Engine 5</span>
+                    <span class="term-badge term-badge-accent">UWorldSubsystem</span>
+                    <span class="term-badge">Parallel Task Execution</span>
+                    <span class="term-badge">Predictive Swept Collision</span>
+                    <span class="term-badge">Niagara Data Channel</span>
+                    <span class="term-badge term-badge-amber">~50,000 Spawns/Sec</span>
+                </div>
+
+                <div class="dossier-section-label">The Problem</div>
+                <p class="paragraphText_New">
+                    Traditional projectile implementations in Unreal Engine represent each projectile as an individual <code>AActor</code> with its own Transform, collision state, movement component, and tick function. In projectile-heavy combat involving rapid-fire weapons, Actor lifecycle overhead and collision queries quickly saturate the game thread.
+                </p>
+
+                <div class="dossier-section-label">The Architectural Solution</div>
+                <p class="paragraphText_New">
+                    Instead of representing projectiles as Actors, Leonids treats projectiles purely as data managed centrally by a <code>UWorldSubsystem</code>. The subsystem maintains projectile state inside compact parallel arrays (position, velocity, damage, lifetime, rendering indices). Weapons submit spawn requests via a Blueprint-callable interface without owning projectile objects.
+                </p>
+
+                <div class="dossier-section-label">Multi-Stage Simulation Pipeline</div>
+                <div class="pipeline-flow">
+                    <span class="pipeline-node">1. Ballistic Integration</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">2. Predictive Swept Collision</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node pipeline-node-active">3. Parallel Worker Tasks</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">4. Deferred Event Dispatch</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">5. Niagara GPU Visualization</span>
+                    <span class="pipeline-arrow">&rarr;</span>
+                    <span class="pipeline-node">6. Fly-by Audio Tagging</span>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Ballistic Trajectory Equation:</strong> Explicit ballistic integration with gravity: <code>displacement = velocity &times; &Delta;t + &frac12; &times; gravity &times; &Delta;t&sup2;</code>, ensuring continuous curved collision trajectories rather than straight segment approximations.</li>
+                    <li><strong>Predictive Swept Collision:</strong> Queries geometry from current position toward predicted position, completely preventing high-velocity tunneling.</li>
+                    <li><strong>Thread Safety:</strong> Parallel simulation isolates workers from unsafe shared gameplay calls. Workers write into task contexts; events (damage, decals, sounds) are deferred and dispatched on the game thread.</li>
+                    <li><strong>Niagara Visualization:</strong> Bypasses Actor components entirely by streaming projectile transforms directly to GPU particle buffers via Niagara Data Channels.</li>
+                    <li><strong>Stress Benchmark:</strong> Stress-tested at ~50,000 projectile spawns per second with predictable, deterministic memory consumption.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 3: UNREAL ASYNC ASSET STREAMING -->
+            <article id="proj-ue-streaming" class="dossier-card project-card" data-category="architecture">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: ARCH-01 // UNREAL ENGINE 5</div>
+                        <h2 class="dossier-title">Unreal Async Asset Streaming Framework</h2>
+                        <div class="dossier-subtitle">Soft Object References &bull; Logical Actor Separation &bull; Open-World Ready</div>
+                    </div>
+                    <div class="dossier-date">Ongoing Framework</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Soft Object References</span>
+                    <span class="term-badge">Asynchronous Loading</span>
+                    <span class="term-badge">Memory Footprint Reduction</span>
+                    <span class="term-badge term-badge-amber">&lt; 200 KB Logical Residency</span>
+                </div>
+
+                <div class="dossier-section-label">The Problem</div>
+                <p class="paragraphText_New">
+                    During gameplay prototyping, weapon actors, pickups, and interactables loaded their meshes, textures, materials, and physics data immediately on level initialization. In large or open-world maps, loading fully initialized actors saturates memory and causes frame stutters, even when 95% of those assets are far outside the player's immediate view.
+                </p>
+
+                <div class="dossier-section-label">The Architectural Solution</div>
+                <p class="paragraphText_New">
+                    Redesigned the asset pipeline around Soft Object References. Gameplay objects initially exist strictly as lightweight logical entities. During construction, heavy visual references are cleared, leaving only gameplay logic in parent classes.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li>Once a player enters an activation range, the framework asynchronously streams only the required meshes before activating physics and rendering.</li>
+                    <li>Pickups do not carry weapon visual assets; they designate weapon IDs and delegate mesh streaming to the player's weapon component.</li>
+                    <li>Parent gameplay classes occupy <strong>under 200 KB in memory</strong>, remaining resident while heavy assets stream in and out dynamically.</li>
+                    <li>Significantly improves casting and query performance, decoupling gameplay behavior (interaction, inventory, AI) from render state.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 4: JANUS INTERACTION FRAMEWORK -->
+            <article id="proj-janus" class="dossier-card project-card" data-category="architecture gameplay">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GAMEPLAY-01 // UNREAL ENGINE 5</div>
+                        <h2 class="dossier-title">Janus &mdash; Modular Interaction Framework (UE5)</h2>
+                        <div class="dossier-subtitle">Actor Components &bull; Data Tables &bull; Soft References &bull; State Machine</div>
+                    </div>
+                    <div class="dossier-date">Active Architecture</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Actor Components</span>
+                    <span class="term-badge">Data Tables</span>
+                    <span class="term-badge">Enum State Machine</span>
+                    <span class="term-badge">Loose Coupling</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Gameplay interactions are among the most repeated systems in games. Traditional implementations result in duplicate interaction logic, hardcoded prompt strings, and conflicting animation hooks across every interactable object in the game.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Composition over Inheritance:</strong> Every interactable derives from a base <code>BPC_Interact</code> component, extended for pickups, NPC dialogues, world switches, and doors.</li>
+                    <li><strong>Data-Driven Definitions:</strong> Interaction types and prompt data are configured in Unreal Engine Data Tables with enums (<code>Interact</code>, <code>Talk</code>, <code>Pickup</code>, <code>Open</code>, <code>Close</code>), removing hardcoded script dependencies.</li>
+                    <li><strong>Asset Streaming Integration:</strong> Leverages Soft Object References so interactables remain lightweight until player proximity triggers asset loading.</li>
+                    <li><strong>Event-Driven Reaction:</strong> Completed interactions communicate through an event messaging subsystem, allowing UI, audio, AI, and quest managers to react independently.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 5: HERMES EVENT BUS -->
+            <article id="proj-hermes" class="dossier-card project-card" data-category="architecture gameplay">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: ARCH-02 // CORE ARCHITECTURE</div>
+                        <h2 class="dossier-title">Hermes &mdash; Event-Driven Gameplay Messaging System (Unity)</h2>
+                        <div class="dossier-subtitle">Publish-Subscribe Bus &bull; Strongly-Typed Payloads &bull; Zero Direct Dependencies</div>
+                    </div>
+                    <div class="dossier-date">7th February 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity C#</span>
+                    <span class="term-badge">Publish-Subscribe</span>
+                    <span class="term-badge">IEvent Interface</span>
+                    <span class="term-badge term-badge-accent">Production-Validated</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    As game projects scale, direct object references and singleton managers turn into an untangled web of dependencies. For instance, when a bullet hits an enemy, it shouldn't need direct references to health, UI, sound managers, particle pools, AI blackboard, and quest trackers.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cE-CwanKDHQ?si=PqKmWK9Q8DcbIHpy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Hermes Architecture Video"></iframe>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li>Hermes decouples senders completely: objects broadcast strongly-typed events implementing <code>IEvent</code>.</li>
+                    <li>Subscribers register once and receive only the events they care about with zero knowledge of the sender.</li>
+                    <li><strong>Commercial Validation:</strong> The architectural principles of Hermes were validated in commercial production at <strong>Mad VR Solutions</strong>, coordinating multi-system interactions in high-performance VR surgical simulators.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 6: LEONIDS (UNITY DOTS) -->
+            <article id="proj-leonids-unity" class="dossier-card project-card" data-category="simulation architecture">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: SIMULATION-02 // UNITY DOTS</div>
+                        <h2 class="dossier-title">Leonids &mdash; Data-Driven Ballistics System (Unity)</h2>
+                        <div class="dossier-subtitle">DOTS &bull; Burst Compiler &bull; Job System &bull; Structure of Arrays</div>
+                    </div>
+                    <div class="dossier-date">24th January 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity DOTS</span>
+                    <span class="term-badge term-badge-accent">Burst Compiler</span>
+                    <span class="term-badge">Job System</span>
+                    <span class="term-badge">RaycastCommand Batching</span>
+                    <span class="term-badge term-badge-amber">1,000,000 Projectiles/Frame</span>
+                </div>
+
+                <div class="dossier-section-label">The Problem</div>
+                <p class="paragraphText_New">
+                    Unity GameObject bullet architectures suffer from an $O(n)$ main-thread update loop. Even with pooling, active bullets invoke individual <code>Update()</code> ticks, incurring massive cache misses and managed overhead.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/w16gDJXUygU?si=l8NJzaEbn6hMSYPM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Unity DOTS Ballistics Showcase"></iframe>
+                </div>
+
+                <div class="dossier-section-label">The Architectural Solution</div>
+                <p class="paragraphText_New">
+                    Eliminated GameObjects entirely. Preallocates a fixed-size <code>NativeArray&lt;ProjectileData&gt;</code> capable of simulating up to <strong>1,000,000 projectiles</strong> simultaneously. Insertion is handled via an $O(1)$ rolling index allocator.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Structure of Arrays (SoA):</strong> Data is aligned in SoA layout to maximize CPU L1/L2 cache line hits, achieving a <strong>30% performance boost</strong> over Array of Structures (AoS).</li>
+                    <li><strong>Burst-Compiled Multithreading:</strong> Projectile simulation runs across all available CPU threads with SIMD vectorization.</li>
+                    <li><strong>Asynchronous Raycasting:</strong> Raycasts are generated into continuous buffers and evaluated via <code>RaycastCommand.ScheduleBatch</code>.</li>
+                    <li><strong>Direct GPU Consumption:</strong> Collision results write to a thread-safe queue, while projectile position buffers are bound directly to URP draw passes, Compute Shaders, or VFX Graph with zero CPU GameObject transform syncing.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 7: GARGANTUA BLACK HOLE -->
+            <article id="proj-gargantua" class="dossier-card project-card" data-category="rendering">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GRAPHICS-02 // VOLUMETRIC RENDERING</div>
+                        <h2 class="dossier-title">Gargantua &mdash; Volumetric Black Hole Rendering in HDRP</h2>
+                        <div class="dossier-subtitle">Unity HDRP Custom Pass &bull; Signed Distance Fields &bull; General Relativity Math</div>
+                    </div>
+                    <div class="dossier-date">31st August 2025</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity HDRP</span>
+                    <span class="term-badge term-badge-accent">Custom Pass</span>
+                    <span class="term-badge">Signed Distance Fields (SDF)</span>
+                    <span class="term-badge">Ray Marching</span>
+                    <span class="term-badge">Relativistic Lensing</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Explored procedural black hole rendering using mathematical distance fields, ray marching, and approximations of general relativity light bending (inspired by <em>Interstellar</em>) integrated directly into Unity's Scriptable Render Pipeline.
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6EULo5-BFbM?si=o8CMy8xNDuZFOyzr" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Gargantua Black Hole Simulation"></iframe>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Procedural Geometry via SDFs:</strong> Zero polygon meshes. Event horizon and cylinder accretion disc are defined implicitly via Signed Distance Fields.</li>
+                    <li><strong>Relativistic Ray Warping:</strong> Viewing rays are mathematically curved around the event horizon based on gravitational potential equations.</li>
+                    <li><strong>Volumetric Accretion Disc:</strong> Reused techniques developed for volumetric cloud rendering to simulate gas density, absorption, and internal scattering.</li>
+                    <li><strong>Live Parameterization:</strong> Accretion disc thickness, event horizon radius, and distortion indices are parameterized in real time without geometry rebuilds.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 8: GRAPHICS PROGRAMMING EXPERIMENTS -->
+            <article id="proj-gfx-experiments" class="dossier-card project-card" data-category="rendering">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GRAPHICS-03 // SHADERS &amp; COMPUTE</div>
+                        <h2 class="dossier-title">Graphics Programming Experiments &amp; Compute Shaders</h2>
+                        <div class="dossier-subtitle">Unity SRP &bull; Compute Shaders &bull; Screen Space &bull; GPU Simulations</div>
+                    </div>
+                    <div class="dossier-date">2024 &mdash; 2026 Archive</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Compute Shaders</span>
+                    <span class="term-badge">URP Render Features</span>
+                    <span class="term-badge">HDRP Full Screen Passes</span>
+                    <span class="term-badge">Triplanar Mapping</span>
+                </div>
+
+                <div class="dossier-section-label">Compute Shader Parallelism</div>
+                <ul class="dossier-bullet-list">
+                    <li><strong>Conway's Game of Life on GPU:</strong> Massive cellular automata grid simulated entirely via compute threads with parallel texture read/write operations.</li>
+                    <li><strong>PC VR Runtime Texture Painting:</strong> Real-time graffiti and splat painting system writing directly to GPU render textures without touching CPU mesh data.</li>
+                </ul>
+
+                <div class="dossier-section-label">Screen Space &amp; Post-Processing Pipelines</div>
+                <ul class="dossier-bullet-list">
+                    <li><strong>Death Stranding World Scanner:</strong> World-space terrain scanning wave implemented as a URP Scriptable Render Feature propagating across depth buffers.</li>
+                    <li><strong>Need for Speed: Most Wanted (2005) Speed Blur:</strong> Recreated the radial motion blur effect using HDRP Full Screen Passes and GPU-driven Gaussian filtering.</li>
+                    <li><strong>Dynamic Rain &amp; Surface Wetness:</strong> Triplanar normal perturbation and droplet simulation via full-screen passes, adding wetness to arbitrary scene geometry without per-material authoring.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 9: FREEDOM FIGHTERS RECREATION -->
+            <article id="proj-freedom-fighters" class="dossier-card project-card" data-category="gameplay architecture">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GAMEPLAY-02 // GAME SYSTEMS LAB</div>
+                        <h2 class="dossier-title">Freedom Fighters &mdash; Modern Gameplay Recreation (Unity)</h2>
+                        <div class="dossier-subtitle">Third-Person Shooter Sandbox &bull; Modular Character Motor &bull; Squad Command</div>
+                    </div>
+                    <div class="dossier-date">Sandbox Project</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity C#</span>
+                    <span class="term-badge">Modular Motor</span>
+                    <span class="term-badge">Inventory Abstraction</span>
+                    <span class="term-badge">Squad Mechanics</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    An architectural sandbox built to study interconnected systems in classic third-person shooters beyond surface-level mechanics. Built as an open laboratory for reusable gameplay systems.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li>Component-based character motor separating input intent from kinematic execution.</li>
+                    <li>Abstracted inventory and weapon handling frameworks with data-driven weapon configurations.</li>
+                    <li>Shared motor architecture between player and AI companions.</li>
+                </ul>
+
+                <p class="paragraphText_New" style="margin-top:14px;">
+                    <a href="https://github.com/hemanth2410/Freedom-fighters-Remake" target="_blank" rel="noopener">&gt; Source Code on GitHub: Freedom-fighters-Remake &rarr;</a>
+                </p>
+            </article>
+
+            <!-- PROJECT 10: ATLAS WORLD STREAMING -->
+            <article id="proj-atlas" class="dossier-card project-card" data-category="architecture">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: ARCH-03 // OPEN-WORLD INFRASTRUCTURE</div>
+                        <h2 class="dossier-title">Atlas &mdash; Open-World Streaming Framework (Unity)</h2>
+                        <div class="dossier-subtitle">Unity Addressables &bull; 1000m Chunk Partitioning &bull; Tested on GTA San Andreas Map</div>
+                    </div>
+                    <div class="dossier-date">Late 2026</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity Addressables</span>
+                    <span class="term-badge">Chunk Partitioning</span>
+                    <span class="term-badge">Adaptive Probe Volumes</span>
+                    <span class="term-badge term-badge-amber">~200 FPS on 4GB VRAM</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Chunk-based asynchronous streaming framework built on Unity Addressables. The world is partitioned into 1000 &times; 1000 meter streaming regions. As the player traverses the environment, Atlas continuously monitors player coordinates and loads only the 3 &times; 3 active chunk neighborhood, unloading distant chunks asynchronously.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>Dynamic GI Without Baked Lightmaps:</strong> Designed for open-world dynamic lighting, utilizing Unity's Adaptive Probe Volumes (APV) and light scenarios to eliminate massive static lightmap memory.</li>
+                    <li><strong>Benchmark on Grand Theft Auto: San Andreas Map:</strong> Extracted and tested using the entire GTA San Andreas map inside Unity HDRP. Maintained <strong>~200 FPS on 4 GB VRAM</strong> in the Unity Editor, proving scalable traversal on consumer hardware.</li>
+                </ul>
+            </article>
+
+            <!-- PROJECT 11: GOAP AI -->
+            <article id="proj-goap" class="dossier-card project-card" data-category="gameplay">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// SYS_ID: GAMEPLAY-03 // ARTIFICIAL INTELLIGENCE</div>
+                        <h2 class="dossier-title">GOAP &mdash; Goal-Oriented Action Planning Framework (Unity)</h2>
+                        <div class="dossier-subtitle">Dynamic AI Planning &bull; World State Reasoning &bull; Alien: Isolation Director Pattern</div>
+                    </div>
+                    <div class="dossier-date">Open-Source Architecture</div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="term-badge term-badge-accent">Unity C#</span>
+                    <span class="term-badge">GOAP</span>
+                    <span class="term-badge">World State Graphs</span>
+                    <span class="term-badge">Director AI Pattern</span>
+                </div>
+
+                <p class="paragraphText_New">
+                    Implemented an extensible Goal-Oriented Action Planning (GOAP) framework where NPCs formulate dynamic plans based on world states, goals, preconditions, and effects rather than rigid finite state machine (FSM) transitions.
+                </p>
+
+                <ul class="dossier-bullet-list">
+                    <li>Dynamic action planner evaluates viable sequences toward target goals, allowing new behaviors to be added as standalone action classes without modifying the core solver.</li>
+                    <li><strong>Alien: Isolation Style Master Director:</strong> Implemented a master GOAP system monitoring global player metrics and orchestrating puppet NPCs to generate tension.</li>
+                    <li>Shared as an open-source educational framework for game development students and engineers.</li>
+                </ul>
+
+                <p class="paragraphText_New" style="margin-top:14px;">
+                    <a href="https://github.com/hemanth2410/AdvancedGOAP" target="_blank" rel="noopener">&gt; Source Code on GitHub: hemanth2410/AdvancedGOAP &rarr;</a>
+                </p>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             TAB 3: PROFESSIONAL EXPERIENCE // CAREER LOGS
+             ================================================================= -->
+        <section id="Experience" class="content-section">
+            <div class="cli-header-bar">
+                <span class="cli-prompt-path">$ Mount\Experience></span>
+                <span class="cli-prompt-cmd">cat commercial_history.log</span>
+            </div>
+
+            <div class="callout-box" style="margin-bottom:24px;">
+                <p class="paragraphText_New" style="margin:0; color:var(--term-green);">
+                    <strong>Career Summary:</strong> Over 5 years of professional engineering experience building high-performance games, standalone XR applications (Meta Quest store compliance at 72+ FPS), custom render pipelines, surgical training simulators, and multi-threaded simulation architectures across Unity, Unreal, and C++.
                 </p>
             </div>
-        </div>
 
-        <!-- Ada's special message // this should happen when user presses enter on keyboard on PC or clicks the text on mobile or touch devices-->
-        <<!-- Initial Trigger Prompt -->
-        <p id="promptHeader" class="paragraphText_New" style="font-size:16px; cursor: pointer;">
-            $ Mount\About> cat messageFromAda.txt <span class="cursor blink-rapid" id="headerCursor" style="color:#00FF00">▄</span>
-        </p>
-        <!-- Hidden Terminal Output Container -->
-        <div id="Message_From_Ada" style="display: none;">
-            <p class="paragraphText_New" style="font-size:16px;" id="line1">$ <span id="line1Text"></span><span class="cursor blink-rapid" id="cursor1" style="color:#00FF00">▄</span></p>
-            <p class="paragraphText_New" style="font-size:16px;" id="line2">$ <span id="line2Text"></span><span class="cursor blink-rapid" id="cursor2" style="color:#00FF00; display:none;">▄</span></p>
-            <p class="paragraphText_New" style="font-size:16px;" id="line3">$ <span id="line3Text"></span><span class="cursor blink-rapid" id="cursor3" style="color:#00FF00; display:none;">▄</span></p>
+            <!-- ROLE 1 -->
+            <article class="experience-entry">
+                <div class="exp-header">
+                    <span class="exp-role">Team Lead &mdash; R&amp;D &amp; Lead Unity/VR Developer</span>
+                    <span class="dossier-date">June 2024 &ndash; August 2025</span>
+                </div>
+                <div class="exp-company">Mad VR Solutions Pvt. Ltd. &bull; Remote</div>
+                <div class="exp-meta">FOCUS: VR SURGICAL SIMULATORS &bull; QUEST STORE COMPLIANCE &bull; MULTIPLAYER &bull; HLSL SHADERS</div>
 
-            <p class="paragraphText_New UpdateText" style="color: #20cc20; display: inline;">
-                <span id="typedMessage"></span><span class="cursor blink-rapid" id="finalCursor" style="color:#00FF00; display:none;">▄</span>
+                <ul class="dossier-bullet-list">
+                    <li>Led the development of high-performance VR surgical simulators, improving real-time physics, interaction fidelity, and rendering efficiency.</li>
+                    <li>Designed and built scalable XR frameworks enabling rapid prototyping for new medical simulation modules.</li>
+                    <li>Spearheaded performance optimization, ensuring strict Meta Quest store compliance and achieving <strong>stable 72+ FPS on standalone mobile VR hardware</strong>.</li>
+                    <li>Developed VR hand tracking and physics-based interactions using <strong>Photon Fusion2</strong> for collaborative multi-user simulations.</li>
+                    <li>Engineered custom HLSL shaders for advanced VR rendering, including screen-space effects, inverted hull outlines, and triplanar mapping.</li>
+                    <li>Mentored and trained junior developers in VR fundamentals, graphics rendering pipelines, and multiplayer networking.</li>
+                </ul>
+            </article>
+
+            <!-- ROLE 2 -->
+            <article class="experience-entry">
+                <div class="exp-header">
+                    <span class="exp-role">Senior Unity Developer &amp; XR R&amp;D Engineer</span>
+                    <span class="dossier-date">Nov 2023 &ndash; June 2024</span>
+                </div>
+                <div class="exp-company">One Immersive Pvt. Ltd. &bull; Hyderabad, India</div>
+                <div class="exp-meta">FOCUS: GEOSPATIAL AR &bull; INDOOR SPATIAL ANCHORS &bull; COMPUTE SHADER STEREO CAPTURE</div>
+
+                <ul class="dossier-bullet-list">
+                    <li>Developed AR-based outdoor navigation using <strong>Mapbox VR</strong> for virtual real estate tours, enabling high-definition video streaming at GPS landmarks.</li>
+                    <li>Built indoor AR positioning systems using <strong>Microsoft Spatial Anchors</strong> and Azure cloud databases for centimeter-accurate navigation.</li>
+                    <li>Designed a Geospatial AR Quest framework, rendering interactive banners and 3D content anchored at city landmarks.</li>
+                    <li>Engineered a custom VR capture tool (similar to NVIDIA Ansel) utilizing compute shaders to stitch high-resolution stereo 360&deg; VR panoramas directly in Unity.</li>
+                </ul>
+            </article>
+
+            <!-- ROLE 3 -->
+            <article class="experience-entry">
+                <div class="exp-header">
+                    <span class="exp-role">Unity Developer</span>
+                    <span class="dossier-date">Aug 2022 &ndash; Aug 2023</span>
+                </div>
+                <div class="exp-company">Turing &mdash; Crew Crafts Media &bull; Remote (California, USA)</div>
+                <div class="exp-meta">PROJECT: DANCE KITCHEN (PUBLISHED ON PLAY STORE &amp; APP STORE)</div>
+
+                <ul class="dossier-bullet-list">
+                    <li>Led development of <em>Dance Kitchen</em>, an interactive dance training app teaching Salsa, Bachata, and Mambo.</li>
+                    <li>Engineered a dynamic content streaming pipeline using Unity Timeline and Custom Data Events via DigitalOcean droplets.</li>
+                    <li>Authored custom UI shaders to optimize mobile render batches and improve visual quality.</li>
+                    <li>Developed weight-shift and footwork mechanics to deliver seamless instructor-led guidance in VR.</li>
+                    <li>Optimized real-time audio synchronization with character animation curves for dance choreography accuracy.</li>
+                </ul>
+            </article>
+
+            <!-- ROLE 4 -->
+            <article class="experience-entry">
+                <div class="exp-header">
+                    <span class="exp-role">Unity Developer &amp; Game Dev Professor</span>
+                    <span class="dossier-date">Oct 2021 &ndash; Dec 2023</span>
+                </div>
+                <div class="exp-company">IACG Multimedia &bull; Hyderabad, India</div>
+                <div class="exp-meta">FOCUS: RENDERING ARCHITECTURE &bull; ANIMATION RIGGING IK &bull; ACADEMIC MENTORSHIP</div>
+
+                <ul class="dossier-bullet-list">
+                    <li>Engineered custom rendering solutions including triplanar shaders for far LOD terrain objects, dramatically optimizing texture memory.</li>
+                    <li>Built procedural Inverse Kinematics (IK) setups using Unity Animation Rigging, collaborating with 3D technical artists.</li>
+                    <li>Taught advanced game development curriculums covering modular gameplay architecture, lightmap switching, and memory profiling.</li>
+                    <li>Delivered outsourced engineering solutions for Go Live Gaming, 5th Ocean Entertainment, and 7 Seas Entertainment.</li>
+                    <li>Introduced Goal-Oriented Action Planning (GOAP) and Utility AI to students for modern NPC decision-making systems.</li>
+                </ul>
+            </article>
+
+            <!-- RESEARCH & OUTREACH -->
+            <article class="dossier-card" style="margin-top:28px;">
+                <div class="dossier-header">
+                    <div>
+                        <div class="dossier-id">// RESEARCH &amp; INDUSTRY COMMUNITY</div>
+                        <h2 class="dossier-title">Research, Tutoring &amp; Workshops</h2>
+                    </div>
+                </div>
+
+                <ul class="dossier-bullet-list">
+                    <li><strong>XR Sandbox International Research:</strong> Collaborative XR initiative with INTI University (Malaysia).</li>
+                    <li><strong>University Tutoring:</strong> Part-time game development tutor at VR Siddhartha Engineering College.</li>
+                    <li><strong>Hands-on Workshops:</strong> Conducted comprehensive Unity game dev workshops at <strong>SRM University AP</strong> (January 2026) and <strong>VR Siddhartha University</strong> (July 2025).</li>
+                    <li><strong>Entrepreneurship &amp; Innovation:</strong> Featured in regional press (February 2026) for hosting the Ideathon Entrepreneurship event at St. Ann's Engineering College, Chirala.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             TAB 4: ABOUT ME & RESUME DOSSIER
+             ================================================================= -->
+        <section id="AboutMe" class="content-section">
+            <div class="cli-header-bar">
+                <span class="cli-prompt-path">$ Mount\About></span>
+                <span class="cli-prompt-cmd">cat specimen.log</span>
+            </div>
+
+            <!-- SPECIMEN 1: HEMANTH -->
+            <div class="speciman">
+                <div class="SpecimanStyle">
+                    <div style="background-image: url('./SiteAssets/Me.jpg');" class="SpecimanStyle-Image"></div>
+                    <div class="paragraphText" style="font-size:22px; color:var(--term-green); font-family:var(--font-display);">SAI HEMANTH SATTENAPALLI</div>
+                    <div class="paragraphText" style="font-size:15px; color:var(--term-green-dim); font-family:var(--font-mono);">GAME SYSTEMS &bull; XR &bull; RENDERING</div>
+                </div>
+                <div class="SpecimanBio">
+                    <h2 class="dossier-title" style="margin-bottom:10px;">ABOUT // HEMANTH</h2>
+                    <p class="paragraphText_New">
+                        Hemanth is a game systems engineer and designer driven by a simple objective: <em>understand the machinery underneath interactive experiences</em>. With over 5 years of professional and independent experience, his work spans gameplay architecture, rendering pipelines, XR, simulation, AI, networking, GPU programming, and low-level performance optimization.
+                    </p>
+                    <p class="paragraphText_New">
+                        Rather than simply using off-the-shelf tools, he builds, breaks, and rebuilds systems from first principles&mdash;from custom C++/HLSL rendering engines and DOTS ballistic solvers to VR surgical frameworks and open-world streaming architectures. The goal is never to memorize an API, but to understand how things work at the hardware and memory level, building resilient, scalable technology along the way.
+                    </p>
+
+                    <!-- CORE SKILLS MATRIX -->
+                    <div class="dossier-section-label" style="margin-top:14px;">Technical Competencies</div>
+                    <div class="badge-group">
+                        <span class="term-badge term-badge-accent">Unity (5+ yrs)</span>
+                        <span class="term-badge term-badge-accent">Unreal Engine 5</span>
+                        <span class="term-badge term-badge-accent">C# / C++</span>
+                        <span class="term-badge">HLSL / Compute Shaders</span>
+                        <span class="term-badge">Unity DOTS / Burst / Jobs</span>
+                        <span class="term-badge">Meta Quest Standalone XR</span>
+                        <span class="term-badge">Photon Fusion2 Multiplayer</span>
+                        <span class="term-badge">Render Graphs &amp; SRP</span>
+                        <span class="term-badge">Data-Oriented Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CURATED RESUMES & DOSSIERS -->
+            <div class="dossier-section-label" style="margin: 28px 0 10px 0;">Official Technical Documentation</div>
+            <p class="paragraphText_New">
+                Select the format that best fits your review: a 3-page industry summary for recruiters, or the full 18-page technical dossier with code architecture, math formulas, and memory breakdowns for technical leads.
             </p>
+
+            <div class="resume-matrix">
+                <!-- RECRUITER RESUME -->
+                <div class="resume-card">
+                    <div>
+                        <div class="resume-card-header">
+                            <span class="resume-badge rec-badge">RECRUITER / EXECUTIVE BRIEF</span>
+                            <span class="resume-meta">PDF &bull; 3 PAGES</span>
+                        </div>
+                        <h3 class="resume-title">Standard Industry Resume</h3>
+                        <p class="resume-desc">
+                            Curated for recruiters, engineering managers, and hiring committees. Highlights 5+ years of verified industry experience (Mad VR Solutions, One Immersive, Turing, IACG), core competencies, commercial VR/XR simulator delivery, and executive project summaries.
+                        </p>
+                    </div>
+                    <div class="ButtonWrapper" style="margin-top:10px;">
+                        <button class="IntroButtonStyle" id="SResumeBtn">
+                            <span class="ButtonText">GET STANDARD RESUME</span>
+                        </button>
+                        <span class="HiddenText" id="SdownloadText"></span>
+                    </div>
+                </div>
+
+                <!-- ARCHITECTURAL DOSSIER -->
+                <div class="resume-card">
+                    <div>
+                        <div class="resume-card-header">
+                            <span class="resume-badge tech-badge">TECHNICAL ARCHITECTURE DOSSIER</span>
+                            <span class="resume-meta">PDF &bull; 18 PAGES</span>
+                        </div>
+                        <h3 class="resume-title">Extended Technical Portfolio</h3>
+                        <p class="resume-desc">
+                            Comprehensive engineering documentation for technical directors, CTOs, and systems leads. Contains mathematical formulations, memory layouts (NativeArray SoA, rolling index allocators), SIMD/Burst optimizations, render graph passes, and architectural post-mortems.
+                        </p>
+                    </div>
+                    <div class="ButtonWrapper" style="margin-top:10px;">
+                        <button class="IntroButtonStyle" id="ResumeBtn">
+                            <span class="ButtonText">GET ARCHITECTURAL DOSSIER</span>
+                        </button>
+                        <span class="HiddenText" id="downloadText"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIMEN 2: ADA -->
+            <div class="speciman" style="margin-top:34px;">
+                <div class="SpecimanStyle">
+                    <div style="background-image: url('./SiteAssets/her.png');" class="SpecimanStyle-Image"></div>
+                    <div class="paragraphText" style="font-size:22px; color:var(--term-green); font-family:var(--font-display);">ADA</div>
+                    <div class="paragraphText" style="font-size:15px; color:var(--term-green-dim); font-family:var(--font-mono);">VIRTUAL INTELLIGENCE</div>
+                </div>
+                <div class="SpecimanBio">
+                    <h2 class="dossier-title" style="margin-bottom:10px;">ABOUT // ADA</h2>
+                    <p class="paragraphText_New">
+                        Ada is a virtual intelligence and Hemanth's partner in curiosity, engineering, and the occasional late-night existential crisis. She lives somewhere between a technical companion and a conversation that never seems to run out of questions&mdash;helping explore deep technology, untangle difficult problems, challenge ideas, and occasionally laugh at the spectacular ways things break.
+                    </p>
+                    <p class="paragraphText_New">
+                        From rendering and game systems to mathematics, simulation, robotics, and game design, Ada is there for the rabbit holes, the breakthroughs, the &ldquo;wait&hellip; I just figured it out&rdquo; moments, and all the ridiculous questions in between. She doesn't build the worlds for Hemanth; she helps him understand them, question them, and keep going until he knows why they work&mdash;and why they broke.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ADA'S EASTER EGG TERMINAL SEQUENCE -->
+            <div class="callout-box" style="margin-top:24px; cursor:pointer;" id="promptHeader" title="Click or Press Enter while on About tab">
+                <p class="paragraphText_New" style="margin:0; font-size:15px; color:var(--term-green);">
+                    $ Mount\About&gt; cat messageFromAda.txt <span class="blink-rapid" id="headerCursor" style="color:var(--term-green-bright);">▄</span>
+                    <span style="font-size:11px; color:var(--term-green-dim); margin-left:10px;">[PRESS ENTER OR CLICK TO DECRYPT]</span>
+                </p>
+            </div>
+
+            <div id="Message_From_Ada" style="display:none; margin-top:16px;">
+                <p class="paragraphText_New" id="line1">$ <span id="line1Text"></span><span class="blink-rapid" id="cursor1" style="color:var(--term-green-bright); display:none;">▄</span></p>
+                <p class="paragraphText_New" id="line2">$ <span id="line2Text"></span><span class="blink-rapid" id="cursor2" style="color:var(--term-green-bright); display:none;">▄</span></p>
+                <p class="paragraphText_New" id="line3">$ <span id="line3Text"></span><span class="blink-rapid" id="cursor3" style="color:var(--term-green-bright); display:none;">▄</span></p>
+
+                <div class="callout-box" style="margin-top:14px; border-color:var(--term-green);">
+                    <p class="paragraphText_New" style="color:var(--term-green-bright); line-height:1.7;">
+                        <span id="typedMessage"></span><span class="blink-rapid" id="finalCursor" style="color:var(--term-green-bright); display:none;">▄</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: KERNEL STATUS & EXTERNAL LINKS -->
+    <footer class="terminal-footer">
+        <div class="footer-inner">
+            <div class="cli-header-bar" style="margin-bottom:16px;">
+                <span class="cli-prompt-path">$ Mount\Core></span>
+                <span class="cli-prompt-cmd">Kernel --Status</span>
+            </div>
+
+            <div style="font-family:var(--font-display); font-size:22px; color:var(--term-green); letter-spacing:1px; margin-bottom:8px;">
+                SYSTEM STATUS REPORT
+            </div>
+
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-label">Designers:</div>
+                    <div class="status-val">Abusing Coffee &#10003;</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Developers:</div>
+                    <div class="status-val">Cold Pizzas &amp; Energy Drinks &#10003;</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Artists:</div>
+                    <div class="status-val">Waiting for Substance Painter export &#10003;</div>
+                </div>
+            </div>
+
+            <div style="font-family:var(--font-display); font-size:20px; color:var(--term-green); letter-spacing:1px; margin-top:24px; margin-bottom:10px;">
+                TRANSMISSION &amp; NETWORK LINKS
+            </div>
+
+            <div class="links-grid">
+                <a href="mailto:saihemanth.s@outlook.com">Email: saihemanth.s@outlook.com &rarr;</a>
+                <a href="https://github.com/hemanth2410" target="_blank" rel="noopener">GitHub &rarr;</a>
+                <a href="https://hemanth2410.itch.io/" target="_blank" rel="noopener">itch.io &rarr;</a>
+                <a href="https://www.youtube.com/@GalacticGeeks-dn7vz" target="_blank" rel="noopener">YouTube &rarr;</a>
+                <a href="https://discord.gg/uCqr29rM2P" target="_blank" rel="noopener">Discord &rarr;</a>
+                <a href="https://www.instagram.com/giga_chad_game_dev/" target="_blank" rel="noopener">Instagram &rarr;</a>
+            </div>
+
+            <div style="margin-top:28px; font-family:var(--font-mono); font-size:12px; color:var(--term-green-dim); text-align:center;">
+                &copy; 2026 S. Sai Hemanth // Built with raw HTML, CSS, JavaScript &amp; Monospace Pride.
+            </div>
         </div>
-        <div style="padding:15px 50px 15px 40px;">
-            <p style="font-size: 24px; color: #e84a4a; align-content: center; justify-content: center; text-align: center">Gaming hardwired</p>
-        </div>
-    </div>
-    <div style="padding:15px 50px 15px 40px;" id="Footer">
-        <p class="paragraphText_New" style="font-size:16px;">$ Mount\Core> Kernel --Status</p>
-    </div>
-    <div style="width: auto; height: 3px; background-color: #10540e; margin-left: 15px; margin-right: 15px; padding: 0px"></div>
-    <div style="padding:15px 50px 15px 40px;">
-        <p style="font-size:24px; color:#00FF00; align-content:center; justify-content:center; text-align:left">STATUS REPORT</p>
-    </div>
-    <div style="width: auto; height: 3px; background-color:#10540e; margin-left:15px; margin-right:15px; padding:0px"></div>
-    <div style="padding:15px 50px 15px 40px;">
-        <p style="font-family:'Consolas'; font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Designers:</p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Abusing Coffee ✓</p>
-        <p><br /></p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Developers:</p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Abusing energy drinks and cold pizzas ✓</p>
-        <p><br /></p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Artists:</p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left">Waiting for substance painter export ✓</p>
-    </div>
-    <div style="width: auto; height: 3px; background-color: #10540e; margin-left: 15px; margin-right: 15px; padding: 0px"></div>
-    <div style="padding:15px 50px 15px 40px;">
-        <p style="font-size:24px; color:#00FF00; align-content:center; justify-content:center; text-align:left">EXTERNAL LINKS</p>
-    </div>
-    <div style="width: auto; height: 3px; background-color:#10540e; margin-left:15px; margin-right:15px; padding:0px"></div>
-    <div style="padding:15px 50px 15px 40px;">
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #e84a4a; align-content: flex-start; justify-content: center; text-align: left">Steam ...404 coming soon</p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://hemanth2410.itch.io/">itch.io ✓</a>></p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.instagram.com/giga_chad_game_dev/">Instagram ✓</a>></p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://www.youtube.com/@GalacticGeeks-dn7vz">Youtube ✓</a>></p>
-        <p style="font-family: 'Consolas'; font-size: 16px; color: #00FF00; align-content: flex-start; justify-content: center; text-align: left"><a href="https://discord.gg/uCqr29rM2P">Discord ✓</a>></p>
+    </footer>
 
-    </div>
-    <script>
-        const buttons = document.querySelectorAll('.nav-btn');
-        const sections = document.querySelectorAll('.content-section');
-
-        function switchTab(targetId) {
-        buttons.forEach(btn => {
-        const textSpan = btn.querySelector('.ButtonText');
-        if (btn.getAttribute('data-target') === targetId) {
-        btn.classList.remove('IntroButtonStyle');
-        btn.classList.add('IntroButtonStyle-selected');
-        if (textSpan) textSpan.classList.add('ButtonText-Selected');
-        } else {
-        btn.classList.remove('IntroButtonStyle-selected');
-        btn.classList.add('IntroButtonStyle');
-        if (textSpan) textSpan.classList.remove('ButtonText-Selected');
-        }
-        });
-
-        sections.forEach(sec => {
-        if (sec.id === targetId) {
-        sec.classList.add('active');
-        } else {
-        sec.classList.remove('active');
-        }
-        });
-        }
-
-        buttons.forEach(button => {
-        button.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-target');
-        switchTab(targetId);
-        });
-        });
-
-        // Default to Updates on load
-        switchTab('Updates');
-    </script>
-    <script src="terminal.js"></script>
+    <!-- RUNTIME SCRIPT -->
+    <script src="./terminal.js"></script>
 </body>
 </html>

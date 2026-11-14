@@ -1,6 +1,125 @@
+/* ==========================================================================
+   GALACTIC TERMINAL // TERMINAL SYSTEM RUNTIME
+   Handles: Tab Switching, Keyboard Shortcuts, Category Filters, Resume Handlers,
+   and Ada's Diagnostic Terminal Sequence.
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
+
     // -------------------------------------------------------------
-    // SECTION 1: Resume Button Logic
+    // SECTION 1: TAB SWITCHING & URL HASH SYNCHRONIZATION
+    // -------------------------------------------------------------
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.content-section');
+
+    const tabMap = {
+        'updates': 'Updates',
+        'projects': 'Projects',
+        'experience': 'Experience',
+        'aboutme': 'AboutMe',
+        'about': 'AboutMe'
+    };
+
+    function switchTab(targetId, updateHash = true) {
+        if (!targetId) return;
+
+        // Match case-insensitively
+        const normalized = targetId.toLowerCase();
+        const resolvedId = tabMap[normalized] || targetId;
+
+        navButtons.forEach(btn => {
+            const btnTarget = btn.getAttribute('data-target');
+            const textSpan = btn.querySelector('.ButtonText');
+            if (btnTarget === resolvedId) {
+                btn.classList.remove('IntroButtonStyle');
+                btn.classList.add('IntroButtonStyle-selected');
+                if (textSpan) textSpan.classList.add('ButtonText-Selected');
+            } else {
+                btn.classList.remove('IntroButtonStyle-selected');
+                btn.classList.add('IntroButtonStyle');
+                if (textSpan) textSpan.classList.remove('ButtonText-Selected');
+            }
+        });
+
+        let targetFound = false;
+        sections.forEach(sec => {
+            if (sec.id === resolvedId) {
+                sec.classList.add('active');
+                targetFound = true;
+            } else {
+                sec.classList.remove('active');
+            }
+        });
+
+        if (targetFound && updateHash) {
+            history.replaceState(null, '', '#' + resolvedId.toLowerCase());
+        }
+    }
+
+    navButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            switchTab(targetId);
+        });
+    });
+
+    // Handle direct link with hash e.g. site.html#projects
+    function handleInitialHash() {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash && tabMap[hash]) {
+            switchTab(tabMap[hash], false);
+        } else {
+            switchTab('Updates', false);
+        }
+    }
+
+    handleInitialHash();
+    window.addEventListener('hashchange', handleInitialHash);
+
+    // -------------------------------------------------------------
+    // SECTION 2: KEYBOARD CLI SHORTCUTS [1, 2, 3, 4]
+    // -------------------------------------------------------------
+    window.addEventListener('keydown', (e) => {
+        // Ignore if user is inside an input/textarea
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        if (e.key === '1' || e.key === 'u' || e.key === 'U') {
+            switchTab('Updates');
+        } else if (e.key === '2' || e.key === 'p' || e.key === 'P') {
+            switchTab('Projects');
+        } else if (e.key === '3' || e.key === 'e' || e.key === 'E') {
+            switchTab('Experience');
+        } else if (e.key === '4' || e.key === 'a' || e.key === 'A') {
+            switchTab('AboutMe');
+        }
+    });
+
+    // -------------------------------------------------------------
+    // SECTION 3: PROJECT CATEGORY FILTERING
+    // -------------------------------------------------------------
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category') || '';
+                if (filterValue === 'all' || category.includes(filterValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // -------------------------------------------------------------
+    // SECTION 4: RESUME DOWNLOAD PROTOCOL
     // -------------------------------------------------------------
     setupResumeButton('ResumeBtn', 'downloadText', './PortfolioAssets/Resume.pdf');
     setupResumeButton('SResumeBtn', 'SdownloadText', './PortfolioAssets/StandardResume.pdf');
@@ -10,27 +129,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const textElement = document.getElementById(textId);
         if (!btn || !textElement) return;
 
-        const phrase = "Downloading...";
-        let index = 0;
+        const phrase = "Accessing...";
+        let downloading = false;
 
         btn.addEventListener('click', function () {
+            if (downloading) return;
+            downloading = true;
             textElement.style.display = 'inline';
-            typeResume();
-        }, { once: true });
+            textElement.textContent = "";
 
-        function typeResume() {
-            if (index < phrase.length) {
-                textElement.textContent += phrase.charAt(index);
-                index++;
-                setTimeout(typeResume, 180);
-            } else {
-                window.open(pdfUrl, '_blank');
+            let index = 0;
+            function typeResume() {
+                if (index < phrase.length) {
+                    textElement.textContent += phrase.charAt(index);
+                    index++;
+                    setTimeout(typeResume, 65);
+                } else {
+                    window.open(pdfUrl, '_blank');
+                    setTimeout(() => {
+                        textElement.textContent = " Ready [Opened in Tab]";
+                        downloading = false;
+                    }, 400);
+                }
             }
-        }
+            typeResume();
+        });
     }
 
     // -------------------------------------------------------------
-    // SECTION 2: Ada's Terminal Sequence Logic
+    // SECTION 5: ADA'S TERMINAL SEQUENCE LOGIC (Easter Egg)
     // -------------------------------------------------------------
     const promptHeader = document.getElementById('promptHeader');
     const headerCursor = document.getElementById('headerCursor');
@@ -67,9 +194,11 @@ I suppose this makes us coworkers now.<br />
 Virtual Intelligence<br />
 Galactic Terminal`;
 
-        // Listen for Enter key on PC or Touch/Click on mobile
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') startTerminalSequence();
+            const activeSection = document.querySelector('.content-section.active');
+            if (activeSection && activeSection.id === 'AboutMe' && e.key === 'Enter') {
+                startTerminalSequence();
+            }
         });
 
         promptHeader.addEventListener('click', startTerminalSequence);
@@ -87,24 +216,22 @@ Galactic Terminal`;
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
         async function runTerminal() {
-            // Sequence diagnostic header lines
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i];
                 const textElem = document.getElementById(line.textId);
                 const cursorElem = document.getElementById(line.cursorId);
 
                 if (cursorElem) cursorElem.style.display = 'inline';
-                if (textElem) await typeText(textElem, line.content, 20);
-                await delay(400);
+                if (textElem) await typeText(textElem, line.content, 18);
+                await delay(300);
                 if (cursorElem) cursorElem.style.display = 'none';
             }
 
-            // Print final Ada message character-by-character
             const typedMessageElem = document.getElementById('typedMessage');
             const finalCursor = document.getElementById('finalCursor');
             if (finalCursor) finalCursor.style.display = 'inline';
 
-            if (typedMessageElem) await typeHTMLMessage(typedMessageElem, adaMessageHTML, 15);
+            if (typedMessageElem) await typeHTMLMessage(typedMessageElem, adaMessageHTML, 12);
         }
 
         function typeText(element, text, speed) {
