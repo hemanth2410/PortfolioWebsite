@@ -210,6 +210,10 @@ p {
     gap: 20px;
 }
 
+.overlay-text > .containerFlex {
+    margin: auto;
+}
+
 .VerticalContainer {
     display: flex;
     flex-direction: column;
@@ -1051,7 +1055,85 @@ a:hover {
 /* ==========================================================================
    MOBILE & RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: portrait) and (max-width: 900px) {
+    /* Index Intro Mobile Layout (Vertical Stacking) */
+    .overlay-text {
+        padding: 20px 16px;
+        min-height: 100vh;
+        align-items: center;
+    }
+
+    .overlay-text > .containerFlex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 520px;
+        padding: 22px 18px;
+        gap: 16px;
+        margin: auto;
+    }
+
+    .GreetingMessage {
+        font-size: clamp(84px, 22vw, 140px);
+        height: auto;
+        line-height: 0.9;
+        margin: 0;
+    }
+
+    .VerticalContainer {
+        width: 100%;
+        max-width: 100%;
+        align-items: stretch;
+    }
+
+    .Heading2 {
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(18px, 4.5vw, 22px);
+        margin: 0 0 12px 0;
+    }
+
+    .Code-text {
+        text-align: left;
+        font-size: 13.5px;
+        line-height: 1.6;
+        margin: 0 0 15px 0;
+    }
+
+    .ButtonWrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 14px;
+        padding: 16px 14px;
+        gap: 12px;
+    }
+
+    .ButtonWrapper .IntroButtonStyle {
+        min-width: 140px;
+        width: auto;
+        max-width: 220px;
+        height: 42px;
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .ButtonWrapper div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 24px;
+        text-align: center;
+    }
+
+    .ButtonWrapper .HiddenText {
+        margin-left: 0;
+        margin-right: 4px;
+    }
+
+    /* Terminal Nav & Site.html styles */
     .terminal-nav-header {
         padding: 10px 14px;
     }
@@ -1128,6 +1210,40 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+    /* Index Intro Mobile Screen Adjustments */
+    .overlay-text {
+        padding: 16px 10px;
+    }
+
+    .overlay-text > .containerFlex {
+        padding: 18px 12px;
+        gap: 12px;
+    }
+
+    .GreetingMessage {
+        font-size: clamp(70px, 20vw, 110px);
+    }
+
+    .Heading2 {
+        font-size: 18px;
+    }
+
+    .Code-text {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .ButtonWrapper {
+        padding: 12px 10px;
+        gap: 10px;
+    }
+
+    .ButtonWrapper .IntroButtonStyle {
+        height: 38px;
+        font-size: 18px;
+        min-width: 130px;
+    }
+
     .grid-item-right {
         grid-template-columns: 1fr 1fr;
     }
