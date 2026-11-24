@@ -1053,9 +1053,43 @@ a:hover {
 }
 
 /* ==========================================================================
+   QR CODE — DESKTOP ONLY
+   ========================================================================== */
+.qr-callout {
+    border-color: var(--term-green-dim);
+    border-style: solid;
+    padding: 20px 24px;
+}
+
+.qr-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.qr-image {
+    width: 160px;
+    height: 160px;
+    image-rendering: pixelated;
+    border: 2px solid var(--term-border);
+    border-radius: 2px;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.15);
+}
+
+.qr-text-block {
+    flex: 1;
+}
+
+/* ==========================================================================
    MOBILE & RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 768px), (orientation: portrait) and (max-width: 900px) {
+    /* Hide QR code on mobile — it's meant for desktop visitors */
+    .qr-desktop-only {
+        display: none !important;
+    }
+
     /* Index Intro Mobile Layout (Vertical Stacking) */
     .overlay-text {
         padding: 20px 16px;
